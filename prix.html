@@ -33,6 +33,7 @@
         <li><a href="prix.html" data-page="prix.html" data-i18n="nav_prices">Preise</a></li>
         <li><a href="services.html" data-page="services.html" data-i18n="nav_services">Services</a></li>
         <li><a href="info.html" data-page="info.html" data-i18n="nav_info">Infos</a></li>
+        <li><a href="about-me.html" data-page="about-me.html" data-i18n="nav_about">About Me</a></li>
         <li><a href="formation.html" data-page="formation.html" data-i18n="nav_formation">Academy</a></li>
       </ul>
       <div class="nav-actions">
@@ -67,6 +68,7 @@
     <a href="prix.html" class="m-link" data-i18n="nav_prices">Preise</a>
     <a href="services.html" class="m-link" data-i18n="nav_services">Services</a>
     <a href="info.html" class="m-link" data-i18n="nav_info">Infos</a>
+    <a href="about-me.html" class="m-link" data-i18n="nav_about">About Me</a>
     <a href="formation.html" class="m-link" data-i18n="nav_formation">Academy</a>
     <div class="mobile-cta">
       <a href="https://www.fresha.com/de/a/bloom-glowluzern-habsburgerstrasse-5atk4d0a6n/booking?menu=true&amp;pId=2504316&amp;dppub=true&amp;employeeId=4551541&amp;cartId=5ad4ee46-3a3b-4efb-ae90-ff8e0094dac7" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-block" data-i18n="cta_book">Termin buchen</a>
@@ -91,13 +93,17 @@
     <section class="section-tight" style="background:var(--soft-pink);text-align:center;">
       <div class="container">
         <span class="eyebrow" data-i18n="prices_eyebrow">Preisliste</span>
-        <h1 class="display" style="font-size:clamp(2.2rem,7vw,3.2rem);" data-i18n="prices_title">Wimpernverlängerung</h1>
-        <p style="color:var(--muted);max-width:560px;margin:12px auto 0;" data-i18n="prices_sub">Transparente Preise für deine Wimpernverlängerung – Neuset &amp; Auffüllen.</p>
+        <h1 class="display" style="font-size:clamp(2.2rem,7vw,3.2rem);" data-i18n="prices_title">Preise &amp; Behandlungen</h1>
+        <p style="color:var(--muted);max-width:560px;margin:12px auto 0;" data-i18n="prices_sub">Wimpernverlängerung, Lifting &amp; Augenbrauen – transparente Preise.</p>
       </div>
     </section>
 
     <section>
       <div class="container">
+        <!-- ===================== BLOCK 1 : WIMPERNVERLÄNGERUNG ===================== -->
+        <div class="section-head reveal" style="margin-bottom:30px;">
+          <h2 data-i18n="block_extensions">Wimpernverlängerung</h2>
+        </div>
         <!-- ===================== EXTENSIONS ===================== -->
         <div class="price-cat reveal">
           <h3 data-i18n="price_extensions_h">Extensions</h3>
@@ -199,6 +205,45 @@
             </div>
           </div>
         </div>
+
+        <!-- ===================== BLOCK 2 : LIFTING & ANDERE SERVICES ===================== -->
+        <div class="section-head reveal" style="margin:18px auto 30px;">
+          <span class="eyebrow" data-i18n="prices_eyebrow">Preisliste</span>
+          <h2 data-i18n="block_lifting">Lifting &amp; andere Services</h2>
+        </div>
+
+        <!-- AUGENBRAUEN -->
+        <div class="price-cat reveal">
+          <h3 data-i18n="cat_augenbrauen">Augenbrauen</h3>
+          <div class="price-grid">
+            <div class="price-card"><div class="pc-info"><h4>Lifting + Färben + Formen</h4></div><div class="pc-price">85 CHF</div></div>
+            <div class="price-card"><div class="pc-info"><h4>Lifting (inkl. Formen)</h4></div><div class="pc-price">75 CHF</div></div>
+            <div class="price-card"><div class="pc-info"><h4>Formen &amp; Färben</h4></div><div class="pc-price">40 CHF</div></div>
+            <div class="price-card"><div class="pc-info"><h4>Formen</h4></div><div class="pc-price">25 CHF</div></div>
+          </div>
+        </div>
+
+        <!-- WIMPERN -->
+        <div class="price-cat reveal">
+          <h3 data-i18n="cat_wimpern_lift">Wimpern</h3>
+          <div class="price-grid">
+            <div class="price-card"><div class="pc-info"><h4>Klassisches Lifting + Färben</h4></div><div class="pc-price">85 CHF</div></div>
+            <!-- TODO: confirmer prix Klassisches Lifting (masqué sur la source) -->
+            <div class="price-card"><div class="pc-info"><h4>Klassisches Lifting</h4></div><div class="pc-price">CHF XX</div></div>
+            <div class="price-card"><div class="pc-info"><h4>Korean Lash Lift + Färben</h4></div><div class="pc-price">100 CHF</div></div>
+            <div class="price-card"><div class="pc-info"><h4>Korean Lash Lift</h4></div><div class="pc-price">95 CHF</div></div>
+            <div class="price-card"><div class="pc-info"><h4>Färben</h4></div><div class="pc-price">25 CHF</div></div>
+          </div>
+        </div>
+
+        <!-- KOMBI-ANGEBOTE -->
+        <div class="price-cat reveal">
+          <h3 data-i18n="cat_kombi">Kombi-Angebote</h3>
+          <div class="price-grid">
+            <div class="price-card"><div class="pc-info"><h4>Klassisches Lash Lift &amp; Brow Lifting</h4><p>inkl. Färben, Formen</p></div><div class="pc-price">140 CHF</div></div>
+            <div class="price-card"><div class="pc-info"><h4>Korean Lash Lift &amp; Brow Lifting</h4><p>inkl. Färben, Formen</p></div><div class="pc-price">160 CHF</div></div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -252,6 +297,7 @@
           <a href="prix.html" data-i18n="nav_prices">Preise</a>
           <a href="services.html" data-i18n="nav_services">Services</a>
           <a href="info.html" data-i18n="nav_info">Infos</a>
+          <a href="about-me.html" data-i18n="nav_about">About Me</a>
           <a href="formation.html" data-i18n="nav_formation">Academy</a>
           <a href="reservation.html" data-i18n="cta_book">Termin buchen</a>
         </div>

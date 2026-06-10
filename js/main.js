@@ -10,7 +10,8 @@
   const T = {
     de: {
       nav_home: "Start", nav_prices: "Preise", nav_services: "Services",
-      nav_info: "Infos", nav_formation: "Academy",
+      nav_info: "Infos", nav_about: "About Me", nav_formation: "Academy",
+      about_wa: "Chat auf WhatsApp",
       cta_book: "Termin buchen", cta_shop: "Shop", cta_shop_full: "Shop Bloom & Glow", cta_wa: "WhatsApp",
       cta_book_wa: "Auf WhatsApp buchen", cta_visit_shop: "Shop besuchen",
       cta_explore: "Services entdecken",
@@ -46,8 +47,10 @@
 
       /* PREISE */
       prices_eyebrow: "Preisliste",
-      prices_title: "Wimpernverlängerung",
-      prices_sub: "Transparente Preise für deine Wimpernverlängerung – Neuset & Auffüllen.",
+      prices_title: "Preise & Behandlungen",
+      prices_sub: "Wimpernverlängerung, Lifting & Augenbrauen – transparente Preise.",
+      block_extensions: "Wimpernverlängerung", block_lifting: "Lifting & andere Services",
+      cat_augenbrauen: "Augenbrauen", cat_wimpern_lift: "Wimpern", cat_kombi: "Kombi-Angebote",
       price_extensions_h: "Extensions", price_extras_h: "Extras",
       col_service: "Service", col_neuset: "Neuset",
       col_refill3: "Auffüllen bis 3 Wochen", col_refill4: "Auffüllen bis 4 Wochen",
@@ -134,7 +137,8 @@
 
     en: {
       nav_home: "Home", nav_prices: "Prices", nav_services: "Services",
-      nav_info: "Info", nav_formation: "Academy",
+      nav_info: "Info", nav_about: "About Me", nav_formation: "Academy",
+      about_wa: "Chat on WhatsApp",
       cta_book: "Book now", cta_shop: "Shop", cta_shop_full: "Shop Bloom & Glow", cta_wa: "WhatsApp",
       cta_book_wa: "Book on WhatsApp", cta_visit_shop: "Visit shop",
       cta_explore: "Explore services",
@@ -169,8 +173,10 @@
       shop_text: "Discover our lash products in the official Bloom & Glow online shop.",
 
       prices_eyebrow: "Price list",
-      prices_title: "Lash Extensions",
-      prices_sub: "Transparent pricing for your lash extensions — new set & refills.",
+      prices_title: "Prices & Treatments",
+      prices_sub: "Lash extensions, lifting & brows — transparent pricing.",
+      block_extensions: "Lash Extensions", block_lifting: "Lifting & other services",
+      cat_augenbrauen: "Brows", cat_wimpern_lift: "Lashes", cat_kombi: "Combo offers",
       price_extensions_h: "Extensions", price_extras_h: "Extras",
       col_service: "Service", col_neuset: "New set",
       col_refill3: "Refill up to 3 weeks", col_refill4: "Refill up to 4 weeks",
@@ -252,7 +258,8 @@
 
     fr: {
       nav_home: "Accueil", nav_prices: "Prix", nav_services: "Services",
-      nav_info: "Infos", nav_formation: "Academy",
+      nav_info: "Infos", nav_about: "About Me", nav_formation: "Academy",
+      about_wa: "Chat sur WhatsApp",
       cta_book: "Prendre RDV", cta_shop: "Shop", cta_shop_full: "Shop Bloom & Glow", cta_wa: "WhatsApp",
       cta_book_wa: "Réserver sur WhatsApp", cta_visit_shop: "Visiter la boutique",
       cta_explore: "Découvrir les services",
@@ -287,8 +294,10 @@
       shop_text: "Découvre nos produits cils dans la boutique en ligne officielle Bloom & Glow.",
 
       prices_eyebrow: "Tarifs",
-      prices_title: "Extensions de cils",
-      prices_sub: "Des prix transparents pour tes extensions de cils — nouvelle pose & remplissage.",
+      prices_title: "Prix & Soins",
+      prices_sub: "Extensions de cils, lifting & sourcils — prix transparents.",
+      block_extensions: "Extensions de cils", block_lifting: "Lifting & autres services",
+      cat_augenbrauen: "Sourcils", cat_wimpern_lift: "Cils", cat_kombi: "Offres combinées",
       price_extensions_h: "Extensions", price_extras_h: "Extras",
       col_service: "Service", col_neuset: "Nouvelle pose",
       col_refill3: "Remplissage jusqu'à 3 semaines", col_refill4: "Remplissage jusqu'à 4 semaines",
