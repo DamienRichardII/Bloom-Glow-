@@ -11,7 +11,7 @@
     de: {
       nav_home: "Start", nav_prices: "Preise", nav_services: "Services",
       nav_info: "Infos", nav_formation: "Academy",
-      cta_book: "Termin buchen", cta_shop: "Shop", cta_wa: "WhatsApp",
+      cta_book: "Termin buchen", cta_shop: "Shop", cta_shop_full: "Shop Bloom & Glow", cta_wa: "WhatsApp",
       cta_book_wa: "Auf WhatsApp buchen", cta_visit_shop: "Shop besuchen",
       cta_explore: "Services entdecken",
 
@@ -45,9 +45,16 @@
       shop_text: "Entdecke unsere Lash-Produkte im offiziellen Bloom & Glow Online-Shop.",
 
       /* PREISE */
-      prices_eyebrow: "Preise",
-      prices_title: "Preise & Behandlungen",
-      prices_sub: "Transparente Preise – die definitiven Tarife werden in Kürze ergänzt.",
+      prices_eyebrow: "Preisliste",
+      prices_title: "Wimpernverlängerung",
+      prices_sub: "Transparente Preise für deine Wimpernverlängerung – Neuset & Auffüllen.",
+      price_extensions_h: "Extensions", price_extras_h: "Extras",
+      col_service: "Service", col_neuset: "Neuset",
+      col_refill3: "Auffüllen bis 3 Wochen", col_refill4: "Auffüllen bis 4 Wochen",
+      na_refill: "Auffüllen nicht geeignet",
+      e_wispy: "Wispy Look", e_extra_note: "zusätzlich",
+      e_remove: "Entfernen", e_remove_new: "Entfernen mit anschliessendem Neuset",
+      e_clean: "Übermässige Reinigung", e_clean_d: "Bei viel Kleberesten, Mascara etc.",
       cat_lashes: "Lashes", cat_brows: "Brows", cat_care: "Beauty Care",
       d_classic: "Natürlicher Look, eine Wimper pro Naturwimper",
       d_hybrid: "Mix aus Classic & Volume",
@@ -128,7 +135,7 @@
     en: {
       nav_home: "Home", nav_prices: "Prices", nav_services: "Services",
       nav_info: "Info", nav_formation: "Academy",
-      cta_book: "Book now", cta_shop: "Shop", cta_wa: "WhatsApp",
+      cta_book: "Book now", cta_shop: "Shop", cta_shop_full: "Shop Bloom & Glow", cta_wa: "WhatsApp",
       cta_book_wa: "Book on WhatsApp", cta_visit_shop: "Visit shop",
       cta_explore: "Explore services",
 
@@ -161,9 +168,16 @@
       shop_title: "Bloom & Glow Shop",
       shop_text: "Discover our lash products in the official Bloom & Glow online shop.",
 
-      prices_eyebrow: "Prices",
-      prices_title: "Prices & Treatments",
-      prices_sub: "Transparent pricing — final rates will be added shortly.",
+      prices_eyebrow: "Price list",
+      prices_title: "Lash Extensions",
+      prices_sub: "Transparent pricing for your lash extensions — new set & refills.",
+      price_extensions_h: "Extensions", price_extras_h: "Extras",
+      col_service: "Service", col_neuset: "New set",
+      col_refill3: "Refill up to 3 weeks", col_refill4: "Refill up to 4 weeks",
+      na_refill: "Refill not suitable",
+      e_wispy: "Wispy Look", e_extra_note: "additional",
+      e_remove: "Removal", e_remove_new: "Removal with new set after",
+      e_clean: "Intensive cleaning", e_clean_d: "For heavy glue residue, mascara, etc.",
       cat_lashes: "Lashes", cat_brows: "Brows", cat_care: "Beauty Care",
       d_classic: "Natural look, one lash per natural lash",
       d_hybrid: "Mix of Classic & Volume",
@@ -239,7 +253,7 @@
     fr: {
       nav_home: "Accueil", nav_prices: "Prix", nav_services: "Services",
       nav_info: "Infos", nav_formation: "Academy",
-      cta_book: "Prendre RDV", cta_shop: "Shop", cta_wa: "WhatsApp",
+      cta_book: "Prendre RDV", cta_shop: "Shop", cta_shop_full: "Shop Bloom & Glow", cta_wa: "WhatsApp",
       cta_book_wa: "Réserver sur WhatsApp", cta_visit_shop: "Visiter la boutique",
       cta_explore: "Découvrir les services",
 
@@ -272,9 +286,16 @@
       shop_title: "Boutique Bloom & Glow",
       shop_text: "Découvre nos produits cils dans la boutique en ligne officielle Bloom & Glow.",
 
-      prices_eyebrow: "Prix",
-      prices_title: "Prix & Soins",
-      prices_sub: "Des prix transparents — les tarifs définitifs seront ajoutés très bientôt.",
+      prices_eyebrow: "Tarifs",
+      prices_title: "Extensions de cils",
+      prices_sub: "Des prix transparents pour tes extensions de cils — nouvelle pose & remplissage.",
+      price_extensions_h: "Extensions", price_extras_h: "Extras",
+      col_service: "Service", col_neuset: "Nouvelle pose",
+      col_refill3: "Remplissage jusqu'à 3 semaines", col_refill4: "Remplissage jusqu'à 4 semaines",
+      na_refill: "Remplissage non adapté",
+      e_wispy: "Wispy Look", e_extra_note: "en supplément",
+      e_remove: "Dépose", e_remove_new: "Dépose avec nouvelle pose ensuite",
+      e_clean: "Nettoyage intensif", e_clean_d: "En cas de résidus de colle, mascara, etc.",
       cat_lashes: "Lashes", cat_brows: "Brows", cat_care: "Beauty Care",
       d_classic: "Effet naturel, un cil par cil naturel",
       d_hybrid: "Mélange Classic & Volume",
@@ -376,6 +397,14 @@
     document.querySelectorAll("[data-i18n-aria]").forEach(function (el) {
       const k = el.getAttribute("data-i18n-aria");
       if (dict[k] != null) el.setAttribute("aria-label", dict[k]);
+    });
+    /* price table : labels mobiles synchronisés avec la langue */
+    const ptLabels = [dict.col_service, dict.col_neuset, dict.col_refill3, dict.col_refill4];
+    document.querySelectorAll(".price-table tbody tr").forEach(function (tr) {
+      const tds = tr.children;
+      for (let i = 0; i < tds.length; i++) {
+        if (ptLabels[i] != null) tds[i].setAttribute("data-label", ptLabels[i]);
+      }
     });
     /* refresh selectors */
     document.querySelectorAll(".lang-current-flag").forEach(function (el) { el.textContent = FLAGS[lang]; });

@@ -278,6 +278,58 @@ section { padding: 64px 0; }
 .price-card .pc-price { font-family: var(--font-display); font-size: 1.5rem; font-weight: 600; color: var(--hot-pink); white-space: nowrap; }
 .price-note { text-align: center; color: var(--muted); font-size: .85rem; margin-top: 8px; }
 
+/* ---------- 11b. PRICE TABLE (Extensions) ---------- */
+.price-table-wrap {
+  background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+  box-shadow: var(--shadow-sm); overflow: hidden;
+}
+.price-table { width: 100%; border-collapse: collapse; }
+.price-table thead th {
+  font-family: var(--font-sans); font-size: .68rem; font-weight: 500;
+  letter-spacing: .14em; text-transform: uppercase; color: var(--hot-pink);
+  text-align: right; padding: 20px 20px 16px; white-space: nowrap;
+}
+.price-table thead th:first-child { text-align: left; }
+.price-table tbody td {
+  padding: 16px 20px; border-top: 1px solid var(--line);
+  text-align: right; vertical-align: middle;
+}
+.price-table tbody tr:hover td { background: var(--soft-pink); }
+.price-table tbody td:first-child {
+  text-align: left; font-weight: 500; color: var(--black);
+  letter-spacing: .01em; font-size: 1rem;
+}
+.price-table .pt-price {
+  font-family: var(--font-display); font-size: 1.3rem; font-weight: 600;
+  color: var(--hot-pink); white-space: nowrap;
+}
+.price-table .pt-na { font-size: .8rem; color: var(--muted); font-style: italic; }
+
+/* Mobile : table -> cards */
+@media (max-width: 599px) {
+  .price-table-wrap { background: transparent; border: none; box-shadow: none; }
+  .price-table thead { display: none; }
+  .price-table tbody, .price-table tbody tr, .price-table tbody td { display: block; width: 100%; }
+  .price-table tbody tr {
+    background: #fff; border: 1px solid var(--line); border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-sm); margin-bottom: 14px; padding: 6px 4px; overflow: hidden;
+  }
+  .price-table tbody td {
+    border-top: none; display: flex; align-items: center; justify-content: space-between;
+    gap: 14px; padding: 11px 18px; text-align: right;
+  }
+  .price-table tbody td::before {
+    content: attr(data-label); color: var(--muted); font-size: .66rem;
+    letter-spacing: .12em; text-transform: uppercase; text-align: left; flex: 1;
+  }
+  .price-table tbody td:first-child {
+    background: var(--soft-pink); font-family: var(--font-display);
+    font-size: 1.25rem; font-weight: 600; padding: 14px 18px; justify-content: flex-start;
+  }
+  .price-table tbody td:first-child::before { display: none; }
+  .price-table .pt-price { font-size: 1.15rem; }
+}
+
 /* ---------- 12. SERVICES GALLERY (filters) ---------- */
 .filters { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 30px; }
 .filter-btn {
