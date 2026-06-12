@@ -13,7 +13,7 @@
       nav_info: "Infos", nav_about: "About Me", nav_formation: "Academy",
       about_wa: "Chat auf WhatsApp",
       cta_book: "Termin buchen", cta_shop: "Shop", cta_shop_full: "Shop Bloom & Glow", cta_wa: "WhatsApp",
-      cta_book_wa: "Auf WhatsApp buchen", cta_visit_shop: "Shop besuchen",
+      cta_book_wa: "Auf WhatsApp buchen", cta_visit_shop: "Shop besuchen", cta_reserve: "Reservieren",
       cta_explore: "Services entdecken",
 
       hero_eyebrow: "Lashes · Brows · Beauty Care — Luzern",
@@ -38,6 +38,49 @@
       gallery_eyebrow: "Galerie",
       gallery_title: "Looks, die strahlen",
       gallery_sub: "Ein Einblick in unsere Behandlungen.",
+      looks_eyebrow: "Lashes", looks_title: "Lash Looks",
+      looks_sub: "Finde den Look, der zu dir passt.",
+      cta_book_look: "Diesen Look buchen",
+
+      /* ABOUT ME */
+      about_eyebrow: "About Bloom & Glow",
+      about_title: "Hey, ich bin Ilen",
+      about_intro: "Das Herz hinter BLOOM & GLOW Woldegiorgish.",
+      about_p1: "Was als kleine Leidenschaft neben dem Studium begonnen hat, ist für mich heute viel mehr: ein Herzensort, an dem ich zur Ruhe komme, kreativ sein darf und anderen ein gutes Gefühl schenke.",
+      about_p2: "Meine Begeisterung für Beauty und Kreativität begleitet mich schon seit vielen Jahren. Es hat mir immer Freude gemacht, mit kleinen Details etwas Schönes zu erschaffen und Menschen damit zum Strahlen zu bringen.",
+      about_quote: "Blühe & strahle – auf deine ganz eigene Art.",
+      about_meet: "Ich freue mich, dich kennenzulernen.",
+
+      /* SERVICES (Karten) */
+      srv_ext_t: "Wimpernverlängerung",
+      srv_ext_d: "Einzeln applizierte Extensions für längere und dichtere Wimpern. Wähle deinen Wunsch-Look von natürlich bis voluminös.",
+      srv_style_t: "Wimpernstyling",
+      srv_style_d: "Lifting und Färben deiner Naturwimpern für mehr Schwung und Tiefe.",
+      srv_brow_t: "Augenbrauenstyling",
+      srv_brow_d: "Formen, färben und liften für definierte Brauen und einen frischen Ausdruck.",
+
+      /* LASH LOOKS (Beschreibungen) */
+      look_classic_d: "1:1 Technik für einen natürlichen Look.",
+      look_premium_d: "1:1 Technik mit ultraleichten Premium-Wimpern.",
+      look_yy_d: "Zwei Y-förmige Wimpern pro Naturwimper für voluminösen Look mit extra Definition.",
+      look_light_d: "Leichte 3D-Fächer für natürliche Fülle.",
+      look_volumen_d: "5D-Fächer für einen volleren, ausdrucksstarken Look.",
+      look_russian_d: "Maximale Fülle für einen glamourösen Effekt.",
+      look_wetlight_d: "Geschlossene, schmale Fächer für einen definierten und natürlichen Wet-Look.",
+      look_wetvol_d: "Geschlossene Fächer mit mehr Dichte für einen intensiven Wet-Look.",
+      look_signature_d: "Einzigartige Kombination aus Wispy- und Wet-Look.",
+      look_wispy_d: "Der Wispy-Look entsteht, indem einzelne längere Wimpern als kleine Spikes zwischen kürzeren Wimpern gesetzt werden.",
+
+      /* PREISE — Lifting & andere Services (Bezeichnungen) */
+      li_aug_lff: "Lifting + Färben + Formen",
+      li_aug_lf: "Lifting (inkl. Formen)",
+      li_aug_ff: "Formen & Färben",
+      li_formen: "Formen",
+      li_korean_f: "Korean Lash Lift + Färben",
+      li_korean: "Korean Lash Lift",
+      li_faerben: "Färben",
+      li_kombi: "Korean Lash Lift & Brow Lifting",
+      li_inkl: "inkl. Färben, Formen",
 
       book_cta_title: "Bereit zum Strahlen?",
       book_cta_text: "Buche deinen Termin online oder schreib uns direkt auf WhatsApp.",
@@ -140,7 +183,7 @@
       nav_info: "Info", nav_about: "About Me", nav_formation: "Academy",
       about_wa: "Chat on WhatsApp",
       cta_book: "Book now", cta_shop: "Shop", cta_shop_full: "Shop Bloom & Glow", cta_wa: "WhatsApp",
-      cta_book_wa: "Book on WhatsApp", cta_visit_shop: "Visit shop",
+      cta_book_wa: "Book on WhatsApp", cta_visit_shop: "Visit shop", cta_reserve: "Book now",
       cta_explore: "Explore services",
 
       hero_eyebrow: "Lashes · Brows · Beauty Care — Luzern",
@@ -165,6 +208,49 @@
       gallery_eyebrow: "Gallery",
       gallery_title: "Looks that glow",
       gallery_sub: "A glimpse into our treatments.",
+      looks_eyebrow: "Lashes", looks_title: "Lash Looks",
+      looks_sub: "Find the look that suits you.",
+      cta_book_look: "Book this look",
+
+      /* ABOUT ME */
+      about_eyebrow: "About Bloom & Glow",
+      about_title: "Hey, I'm Ilen",
+      about_intro: "The heart behind BLOOM & GLOW Woldegiorgish.",
+      about_p1: "What began as a small passion alongside my studies is so much more to me today: a place close to my heart where I find calm, get creative and give others a good feeling.",
+      about_p2: "My passion for beauty and creativity has been with me for many years. I've always loved creating something beautiful with small details and making people glow.",
+      about_quote: "Bloom & glow — in your very own way.",
+      about_meet: "I look forward to meeting you.",
+
+      /* SERVICES (cards) */
+      srv_ext_t: "Lash Extensions",
+      srv_ext_d: "Individually applied extensions for longer, fuller lashes. Choose your desired look — from natural to voluminous.",
+      srv_style_t: "Lash Styling",
+      srv_style_d: "Lifting and tinting of your natural lashes for more curl and depth.",
+      srv_brow_t: "Brow Styling",
+      srv_brow_d: "Shaping, tinting and lifting for defined brows and a fresh expression.",
+
+      /* LASH LOOKS (descriptions) */
+      look_classic_d: "1:1 technique for a natural look.",
+      look_premium_d: "1:1 technique with ultra-light premium lashes.",
+      look_yy_d: "Two Y-shaped lashes per natural lash for a voluminous look with extra definition.",
+      look_light_d: "Light 3D fans for natural fullness.",
+      look_volumen_d: "5D fans for a fuller, expressive look.",
+      look_russian_d: "Maximum fullness for a glamorous effect.",
+      look_wetlight_d: "Closed, narrow fans for a defined and natural wet look.",
+      look_wetvol_d: "Closed fans with more density for an intense wet look.",
+      look_signature_d: "A unique combination of wispy and wet look.",
+      look_wispy_d: "The wispy look is created by placing individual longer lashes as small spikes between shorter lashes.",
+
+      /* PRICES — Lifting & other services (labels) */
+      li_aug_lff: "Lift + Tint + Shape",
+      li_aug_lf: "Lift (incl. shaping)",
+      li_aug_ff: "Shaping & Tint",
+      li_formen: "Shaping",
+      li_korean_f: "Korean Lash Lift + Tint",
+      li_korean: "Korean Lash Lift",
+      li_faerben: "Tinting",
+      li_kombi: "Korean Lash Lift & Brow Lifting",
+      li_inkl: "incl. tint, shaping",
 
       book_cta_title: "Ready to glow?",
       book_cta_text: "Book your appointment online or message us directly on WhatsApp.",
@@ -261,7 +347,7 @@
       nav_info: "Infos", nav_about: "About Me", nav_formation: "Academy",
       about_wa: "Chat sur WhatsApp",
       cta_book: "Prendre RDV", cta_shop: "Shop", cta_shop_full: "Shop Bloom & Glow", cta_wa: "WhatsApp",
-      cta_book_wa: "Réserver sur WhatsApp", cta_visit_shop: "Visiter la boutique",
+      cta_book_wa: "Réserver sur WhatsApp", cta_visit_shop: "Visiter la boutique", cta_reserve: "Réserver",
       cta_explore: "Découvrir les services",
 
       hero_eyebrow: "Lashes · Brows · Beauty Care — Lucerne",
@@ -286,6 +372,49 @@
       gallery_eyebrow: "Galerie",
       gallery_title: "Des regards qui rayonnent",
       gallery_sub: "Un aperçu de nos soins.",
+      looks_eyebrow: "Lashes", looks_title: "Lash Looks",
+      looks_sub: "Trouve le look qui te ressemble.",
+      cta_book_look: "Réserver ce look",
+
+      /* ABOUT ME */
+      about_eyebrow: "À propos de Bloom & Glow",
+      about_title: "Hey, moi c'est Ilen",
+      about_intro: "Le cœur derrière BLOOM & GLOW Woldegiorgish.",
+      about_p1: "Ce qui a commencé comme une petite passion à côté de mes études est aujourd'hui bien plus pour moi : un lieu de cœur où je trouve le calme, je peux être créative et offrir aux autres un vrai bien-être.",
+      about_p2: "Ma passion pour la beauté et la créativité m'accompagne depuis de nombreuses années. J'ai toujours aimé créer quelque chose de beau avec de petits détails et faire rayonner les gens.",
+      about_quote: "Épanouis-toi & rayonne — à ta façon.",
+      about_meet: "J'ai hâte de te rencontrer.",
+
+      /* SERVICES (cartes) */
+      srv_ext_t: "Extensions de cils",
+      srv_ext_d: "Extensions posées une à une pour des cils plus longs et plus fournis. Choisis ton look — du naturel au volumineux.",
+      srv_style_t: "Rehaussement de cils",
+      srv_style_d: "Rehaussement et teinture de tes cils naturels pour plus de courbe et de profondeur.",
+      srv_brow_t: "Stylisme des sourcils",
+      srv_brow_d: "Forme, teinture et lifting pour des sourcils définis et un regard frais.",
+
+      /* LASH LOOKS (descriptions) */
+      look_classic_d: "Technique 1:1 pour un effet naturel.",
+      look_premium_d: "Technique 1:1 avec des cils premium ultra-légers.",
+      look_yy_d: "Deux cils en forme de Y par cil naturel pour un look volumineux avec plus de définition.",
+      look_light_d: "Éventails 3D légers pour une densité naturelle.",
+      look_volumen_d: "Éventails 5D pour un look plus fourni et expressif.",
+      look_russian_d: "Densité maximale pour un effet glamour.",
+      look_wetlight_d: "Éventails fermés et fins pour un wet look défini et naturel.",
+      look_wetvol_d: "Éventails fermés plus denses pour un wet look intense.",
+      look_signature_d: "Une combinaison unique de wispy et de wet look.",
+      look_wispy_d: "Le wispy look se crée en plaçant des cils plus longs comme de petits spikes entre des cils plus courts.",
+
+      /* PRIX — Lifting & autres services (libellés) */
+      li_aug_lff: "Lifting + Teinture + Forme",
+      li_aug_lf: "Lifting (forme incl.)",
+      li_aug_ff: "Forme & Teinture",
+      li_formen: "Forme",
+      li_korean_f: "Korean Lash Lift + Teinture",
+      li_korean: "Korean Lash Lift",
+      li_faerben: "Teinture",
+      li_kombi: "Korean Lash Lift & Brow Lifting",
+      li_inkl: "teinture & forme incl.",
 
       book_cta_title: "Prête à rayonner ?",
       book_cta_text: "Réserve ton rendez-vous en ligne ou écris-nous directement sur WhatsApp.",
@@ -421,6 +550,8 @@
     document.querySelectorAll("[data-lang]").forEach(function (el) {
       el.classList.toggle("active", el.getAttribute("data-lang") === lang);
     });
+    /* notifie les composants dynamiques (parcours de reservation) */
+    try { document.dispatchEvent(new CustomEvent("bg:lang", { detail: lang })); } catch (e) {}
   }
 
   /* ---------------- 2. DOM READY ---------------- */

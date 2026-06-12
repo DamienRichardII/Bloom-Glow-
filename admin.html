@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Admin — Bloom &amp; Glow Luzern</title>
+  <link rel="icon" type="image/png" href="assets/icons/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body { background: var(--cream); }
+    .adm-bar { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:14px 18px; background:#fff; border-bottom:1px solid var(--line); position:sticky; top:0; z-index:10; }
+    .adm-bar img { height:34px; }
+    .adm-bar-right { display:flex; align-items:center; gap:10px; }
+    .adm-lang { display:flex; gap:4px; }
+    .adm-lang button { border:1px solid var(--line); background:#fff; border-radius:var(--radius-pill); padding:5px 10px; font-size:.72rem; }
+    .adm-lang button.active { background:var(--hot-pink); color:#fff; border-color:var(--hot-pink); }
+    .adm-wrap { max-width:1100px; margin:0 auto; padding:22px 16px 60px; }
+    .adm-login { max-width:380px; margin:8vh auto; background:#fff; border:1px solid var(--line); border-radius:var(--radius); padding:28px 24px; box-shadow:var(--shadow-sm); }
+    .adm-login h1 { font-family:var(--font-display); font-size:1.8rem; margin-bottom:6px; }
+    .adm-login p { color:var(--muted); font-size:.9rem; margin-bottom:16px; }
+    .adm-field { display:flex; flex-direction:column; gap:6px; margin-bottom:14px; font-size:.82rem; }
+    .adm-field input, .adm-field select, .adm-field textarea { font-family:inherit; font-size:.95rem; padding:11px 13px; border:1px solid var(--line); border-radius:var(--radius-sm); background:#fff; }
+    .adm-field input:focus, .adm-field select:focus { outline:none; border-color:var(--hot-pink); }
+    .adm-section { background:#fff; border:1px solid var(--line); border-radius:var(--radius); padding:20px; margin-bottom:22px; box-shadow:var(--shadow-sm); }
+    .adm-section h2 { font-family:var(--font-display); font-size:1.4rem; margin-bottom:14px; }
+    .adm-kpis { display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin-bottom:22px; }
+    .adm-kpi { background:#fff; border:1px solid var(--line); border-radius:var(--radius-sm); padding:16px; text-align:center; }
+    .adm-kpi .num { font-family:var(--font-display); font-size:1.9rem; font-weight:600; color:var(--hot-pink); }
+    .adm-kpi .lbl { font-size:.74rem; color:var(--muted); text-transform:uppercase; letter-spacing:.06em; }
+    .adm-booking { border:1px solid var(--line); border-radius:var(--radius-sm); padding:14px; margin-bottom:12px; }
+    .adm-booking .top { display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; }
+    .adm-booking .when { font-weight:500; }
+    .adm-booking .meta { font-size:.85rem; color:var(--muted); margin-top:4px; }
+    .adm-badge { font-size:.68rem; text-transform:uppercase; letter-spacing:.06em; padding:3px 9px; border-radius:var(--radius-pill); }
+    .badge-pending { background:#fff3cd; color:#8a6d00; }
+    .badge-confirmed { background:#d8f5e3; color:#1b7a45; }
+    .badge-cancelled { background:#fde0e0; color:#b0322b; }
+    .badge-completed { background:#e3e3f5; color:#444; }
+    .adm-actions { display:flex; flex-wrap:wrap; gap:8px; margin-top:12px; }
+    .adm-actions .btn { padding:8px 14px; font-size:.72rem; }
+    .adm-days { display:grid; gap:8px; }
+    .adm-day { display:grid; grid-template-columns: 1.2fr .8fr .8fr .8fr; gap:8px; align-items:center; }
+    .adm-day .dl { font-weight:500; font-size:.9rem; }
+    .adm-row-form { display:flex; flex-wrap:wrap; gap:10px; align-items:flex-end; }
+    .adm-msg { color:var(--muted); font-size:.85rem; }
+    .adm-error { color:#c0392b; font-size:.85rem; margin-top:8px; }
+    .adm-ok { color:#1b7a45; font-size:.85rem; margin-top:8px; }
+    .adm-tmpl { background:var(--soft-pink); border-radius:var(--radius-sm); padding:12px 14px; font-size:.85rem; margin-bottom:8px; }
+    .hidden { display:none !important; }
+    @media (min-width:680px){ .adm-kpis { grid-template-columns:repeat(5,1fr); } }
+  </style>
+</head>
+<body>
+  <div class="adm-bar">
+    <img src="assets/logo/logo.png" alt="Bloom & Glow">
+    <div class="adm-bar-right">
+      <div class="adm-lang" id="adm-lang">
+        <button data-setlang="de">DE</button>
+        <button data-setlang="en">EN</button>
+        <button data-setlang="fr">FR</button>
+      </div>
+      <button id="adm-logout" class="btn btn-outline btn-sm hidden" data-i18n="a_logout">Abmelden</button>
+    </div>
+  </div>
+
+  <!-- LOGIN -->
+  <div id="adm-login" class="adm-login">
+    <h1 data-i18n="a_login_title">Admin Login</h1>
+    <p data-i18n="a_login_sub">Gib dein Passwort ein, um das Dashboard zu öffnen.</p>
+    <div class="adm-field">
+      <label for="adm-token" data-i18n="a_password">Passwort</label>
+      <input id="adm-token" type="password" placeholder="••••••••" autocomplete="current-password">
+    </div>
+    <button id="adm-login-btn" class="btn btn-primary btn-block" data-i18n="a_login_btn">Anmelden</button>
+    <p id="adm-login-error" class="adm-error hidden"></p>
+  </div>
+
+  <!-- DASHBOARD -->
+  <div id="adm-app" class="adm-wrap hidden">
+    <div class="adm-kpis" id="adm-kpis"></div>
+
+    <div class="adm-section">
+      <h2 data-i18n="a_bookings">Termine</h2>
+      <div class="adm-row-form" style="margin-bottom:14px;">
+        <div class="adm-field" style="margin:0;">
+          <label for="adm-filter" data-i18n="a_status">Status</label>
+          <select id="adm-filter">
+            <option value="" data-i18n="a_all">Alle</option>
+            <option value="pending" data-i18n="a_pending">Ausstehend</option>
+            <option value="confirmed" data-i18n="a_confirmed">Bestätigt</option>
+            <option value="completed" data-i18n="a_completed">Erledigt</option>
+            <option value="cancelled" data-i18n="a_cancelled">Storniert</option>
+          </select>
+        </div>
+        <button id="adm-reload-bookings" class="btn btn-outline btn-sm" data-i18n="a_reload">Aktualisieren</button>
+      </div>
+      <div id="adm-bookings"><p class="adm-msg" data-i18n="a_loading">Lädt …</p></div>
+    </div>
+
+    <div class="adm-section">
+      <h2 data-i18n="a_workdays">Arbeitstage</h2>
+      <p class="adm-msg" style="margin-bottom:12px;" data-i18n="a_workdays_intro">Lege fest, an welchen Tagen du arbeitest und zu welchen Zeiten.</p>
+      <div class="adm-days" id="adm-days"></div>
+    </div>
+
+    <div class="adm-section">
+      <h2 data-i18n="a_blocked">Gesperrte Tage</h2>
+      <div class="adm-row-form" style="margin-bottom:14px;">
+        <div class="adm-field" style="margin:0;"><label for="adm-block-date" data-i18n="a_date">Datum</label><input id="adm-block-date" type="date"></div>
+        <div class="adm-field" style="margin:0;"><label for="adm-block-reason" data-i18n="a_reason">Grund (optional)</label><input id="adm-block-reason" type="text"></div>
+        <button id="adm-block-add" class="btn btn-primary btn-sm" data-i18n="a_block_add">Tag sperren</button>
+      </div>
+      <div id="adm-blocked"></div>
+    </div>
+
+    <div class="adm-section">
+      <h2 data-i18n="a_pw_section">Passwort ändern</h2>
+      <p class="adm-msg" style="margin-bottom:12px;" data-i18n="a_pw_intro">Wähle ein neues Passwort (mindestens 6 Zeichen). Das Notfall-Passwort aus der Konfiguration bleibt zusätzlich gültig.</p>
+      <div class="adm-row-form">
+        <div class="adm-field" style="margin:0;"><label for="adm-newpw" data-i18n="a_newpw">Neues Passwort</label><input id="adm-newpw" type="password" autocomplete="new-password"></div>
+        <button id="adm-savepw" class="btn btn-primary btn-sm" data-i18n="a_savepw">Passwort speichern</button>
+      </div>
+      <p id="adm-pw-msg"></p>
+    </div>
+
+    <div class="adm-section">
+      <h2 data-i18n="a_templates">Nachrichtenvorlagen</h2>
+      <p class="adm-msg" style="margin-bottom:12px;" data-i18n="a_templates_intro">Für jede Buchung kannst du oben eine WhatsApp-Nachricht öffnen. Vorlagen:</p>
+      <div id="adm-templates"></div>
+    </div>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

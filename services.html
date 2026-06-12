@@ -96,69 +96,37 @@
 
     <section>
       <div class="container">
-        <!-- FILTERS -->
-        <div class="filters reveal">
-          <button class="filter-btn active" data-filter="all" data-i18n="filter_all">Alle</button>
-          <button class="filter-btn" data-filter="lashes" data-i18n="filter_lashes">Lashes</button>
-          <button class="filter-btn" data-filter="brows" data-i18n="filter_brows">Brows</button>
-          <button class="filter-btn" data-filter="products" data-i18n="filter_products">Products</button>
-        </div>
-
-        <!-- GALLERY -->
+        <!-- SERVICES -->
         <div class="gallery">
-          <article class="g-card reveal" data-cat="lashes">
-            <div class="g-media"><img src="assets/images/lashes-closeup.jpg" alt="Lash Extensions Nahaufnahme" loading="lazy"></div>
+          <article class="g-card reveal">
+            <div class="g-media"><img src="assets/images/lashes-closeup.jpg" alt="Wimpernverlängerung — Bloom & Glow Luzern" loading="lazy"></div>
             <div class="g-body">
               <span class="tag" data-i18n="filter_lashes">Lashes</span>
-              <h3 data-i18n="svc_lash_ext">Lash Extensions</h3>
-              <p data-i18n="s_lashext_d">Classic, Hybrid oder Volume – für jeden Look die passende Technik.</p>
-              <a href="https://wa.me/message/JRDZLUSUA52AF1" target="_blank" rel="noopener noreferrer" class="btn btn-wa btn-sm" data-i18n="cta_book_wa">Auf WhatsApp buchen</a>
+              <h3 data-i18n="srv_ext_t">Wimpernverlängerung</h3>
+              <p data-i18n="srv_ext_d">Einzeln applizierte Extensions für längere und dichtere Wimpern. Wähle deinen Wunsch-Look von natürlich bis voluminös.</p>
+              <a href="reservation.html?cat=extensions" class="btn btn-primary btn-sm" data-i18n="cta_reserve">Reservieren</a>
             </div>
           </article>
 
-          <article class="g-card reveal" data-cat="lashes">
-            <div class="g-media"><img src="assets/images/lash-lift.jpg" alt="Lash Lift natürlicher Schwung" loading="lazy"></div>
+          <article class="g-card reveal">
+            <div class="g-media"><img src="assets/images/lash-lift.jpg" alt="Wimpernstyling — Lifting & Färben" loading="lazy"></div>
             <div class="g-body">
               <span class="tag" data-i18n="filter_lashes">Lashes</span>
-              <h3 data-i18n="svc_lash_lift">Lash Lift</h3>
-              <p data-i18n="s_lashlift_d">Natürlicher Schwung für deine eigenen Wimpern, bis zu 6 Wochen.</p>
-              <a href="https://wa.me/message/JRDZLUSUA52AF1" target="_blank" rel="noopener noreferrer" class="btn btn-wa btn-sm" data-i18n="cta_book_wa">Auf WhatsApp buchen</a>
+              <h3 data-i18n="srv_style_t">Wimpernstyling</h3>
+              <p data-i18n="srv_style_d">Lifting und Färben deiner Naturwimpern für mehr Schwung und Tiefe.</p>
+              <a href="reservation.html?cat=wimpernstyling" class="btn btn-primary btn-sm" data-i18n="cta_reserve">Reservieren</a>
             </div>
           </article>
 
-          <article class="g-card reveal" data-cat="brows">
-            <div class="g-media"><img src="assets/images/brows-closeup.jpg" alt="Brow Lamination Resultat" loading="lazy"></div>
+          <article class="g-card reveal">
+            <div class="g-media"><img src="assets/images/brows-closeup.jpg" alt="Augenbrauenstyling — Formen, Färben & Liften" loading="lazy"></div>
             <div class="g-body">
               <span class="tag" data-i18n="filter_brows">Brows</span>
-              <h3 data-i18n="svc_brow_lam">Brow Lamination</h3>
-              <p data-i18n="s_browlam_d">Definierte, voll wirkende Augenbrauen mit gepflegtem Finish.</p>
-              <a href="https://wa.me/message/JRDZLUSUA52AF1" target="_blank" rel="noopener noreferrer" class="btn btn-wa btn-sm" data-i18n="cta_book_wa">Auf WhatsApp buchen</a>
+              <h3 data-i18n="srv_brow_t">Augenbrauenstyling</h3>
+              <p data-i18n="srv_brow_d">Formen, färben und liften für definierte Brauen und einen frischen Ausdruck.</p>
+              <a href="reservation.html?cat=augenbrauen" class="btn btn-primary btn-sm" data-i18n="cta_reserve">Reservieren</a>
             </div>
           </article>
-
-          <article class="g-card reveal" data-cat="brows">
-            <div class="g-media"><img src="assets/images/brow-care.jpg" alt="Brow Styling Behandlung" loading="lazy"></div>
-            <div class="g-body">
-              <span class="tag" data-i18n="filter_brows">Brows</span>
-              <h3 data-i18n="svc_brow_style">Brow Styling</h3>
-              <p data-i18n="s_browstyle_d">Form, Zupfen und Färben für perfekt gerahmte Augen.</p>
-              <a href="https://wa.me/message/JRDZLUSUA52AF1" target="_blank" rel="noopener noreferrer" class="btn btn-wa btn-sm" data-i18n="cta_book_wa">Auf WhatsApp buchen</a>
-            </div>
-          </article>
-
-          <article class="g-card reveal" data-cat="products">
-            <div class="g-media"><img src="assets/images/lash-products.jpg" alt="Bloom & Glow Lash Produkte" loading="lazy"></div>
-            <div class="g-body">
-              <span class="tag" data-i18n="filter_products">Products</span>
-              <h3 data-i18n="svc_products">Lash Products</h3>
-              <p data-i18n="s_products_d">Hochwertige Lash-Produkte für zuhause – im offiziellen Online-Shop.</p>
-              <a href="https://bloomandglow.sumupstore.com/" target="_blank" rel="noopener noreferrer" class="btn btn-shop btn-sm">
-                <svg class="bag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" width="15" height="15"><path d="M6 8h12l-1 12H7L6 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
-                <span data-i18n="cta_visit_shop">Shop besuchen</span>
-              </a>
-            </div>
-          </article>
-
         </div>
       </div>
     </section>

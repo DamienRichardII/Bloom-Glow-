@@ -96,34 +96,13 @@
 
     <section>
       <div class="container">
-        <div class="section-head reveal" style="margin-bottom:22px;">
-          <h2 style="font-size:1.7rem;" data-i18n="res_choose_title">Wähle deine Behandlung</h2>
-        </div>
-        <div class="choose-grid reveal">
-          <a href="https://wa.me/message/JRDZLUSUA52AF1" target="_blank" rel="noopener noreferrer" class="choose-card">
-            <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 30c8-12 32-12 40 0"/><path d="M10 25l-3-6M18 22l-2-7M24 21v-8M30 22l2-7M38 25l3-6"/></svg>
-            <h4 data-i18n="svc_lash_ext">Lash Extensions</h4>
-          </a>
-          <a href="https://wa.me/message/JRDZLUSUA52AF1" target="_blank" rel="noopener noreferrer" class="choose-card">
-            <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 28c6-10 30-10 36 0"/><path d="M12 24c4 4 20 4 24 0"/></svg>
-            <h4 data-i18n="svc_lash_lift">Lash Lift</h4>
-          </a>
-          <a href="https://wa.me/message/JRDZLUSUA52AF1" target="_blank" rel="noopener noreferrer" class="choose-card">
-            <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M8 20c8-6 24-6 32 0"/><path d="M8 28c8-6 24-6 32 0"/></svg>
-            <h4 data-i18n="svc_brow_lam">Brow Lamination</h4>
-          </a>
-          <a href="https://wa.me/message/JRDZLUSUA52AF1" target="_blank" rel="noopener noreferrer" class="choose-card">
-            <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 24c9-7 25-7 34 0"/><path d="M30 14l8 4-8 4"/></svg>
-            <h4 data-i18n="svc_brow_style">Brow Styling</h4>
-          </a>
-          <a href="https://wa.me/message/JRDZLUSUA52AF1" target="_blank" rel="noopener noreferrer" class="choose-card">
-            <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"><path d="M24 40s-14-8-14-19a8 8 0 0 1 14-5 8 8 0 0 1 14 5c0 11-14 19-14 19z"/></svg>
-            <h4 data-i18n="svc_care">Beauty Care</h4>
-          </a>
-          <a href="https://www.fresha.com/de/a/bloom-glowluzern-habsburgerstrasse-5atk4d0a6n/booking?menu=true&amp;pId=2504316&amp;dppub=true&amp;employeeId=4551541&amp;cartId=5ad4ee46-3a3b-4efb-ae90-ff8e0094dac7" target="_blank" rel="noopener noreferrer" class="choose-card" style="background:#fff;border-color:var(--hot-pink);">
-            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="17" rx="3"/><path d="M3 9h18M8 2v4M16 2v4"/></svg>
-            <h4 data-i18n="cta_book">Termin buchen</h4>
-          </a>
+        <!-- Parcours de reservation dynamique (rendu par js/reservation.js) -->
+        <div id="reservation-app" class="reserve reveal">
+          <div class="reserve-loading">Lädt …</div>
+          <noscript>
+            <p style="text-align:center;color:var(--muted);">Bitte aktiviere JavaScript, um online zu buchen — oder schreib uns direkt auf
+              <a href="https://wa.me/message/JRDZLUSUA52AF1" style="color:var(--hot-pink);">WhatsApp</a>.</p>
+          </noscript>
         </div>
       </div>
     </section>
@@ -207,7 +186,10 @@
     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2z"/></svg>
   </a>
 
+  <script src="https://js.stripe.com/v3/"></script>
+  <script src="js/config.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/reservation.js"></script>
   <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
 </body>
 </html>
