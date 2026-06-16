@@ -16,16 +16,16 @@
       cta_book_wa: "Auf WhatsApp buchen", cta_visit_shop: "Shop besuchen", cta_reserve: "Reservieren",
       cta_explore: "Services entdecken",
 
-      hero_eyebrow: "Lashes · Brows · Beauty Care — Luzern",
+      hero_eyebrow: "Lashes · Brows · Beauty — Luzern",
       hero_lede: "Wimpern, Augenbrauen & Beauty Care in Luzern. Blühe und strahle – auf deine ganz eigene Art.",
 
       home_intro_eyebrow: "Willkommen bei Bloom & Glow",
-      home_intro_title: "Lashes, Brows & Beauty Care",
+      home_intro_title: "Lashes, Brows & Beauty",
       home_intro_text: "Ein Herzensort in Luzern für natürliche Schönheit, feine Details und ein gutes Gefühl. Hochwertige Behandlungen, individuell auf dich abgestimmt.",
 
       svc_eyebrow: "Unsere Services",
       svc_title: "Was wir anbieten",
-      svc_sub: "Premium Lash- & Brow-Behandlungen, mit Liebe zum Detail.",
+      svc_sub: "Lash- & Brow-Behandlungen, mit Liebe zum Detail.",
       svc_lash_ext: "Lash Extensions", svc_lash_ext_d: "Classic, Hybrid & Volume",
       svc_lash_lift: "Lash Lift", svc_lash_lift_d: "Natürlicher Schwung",
       svc_brow_lam: "Brow Lamination", svc_brow_lam_d: "Definiert & gepflegt",
@@ -170,8 +170,8 @@
       res_shop_text: "Lieber Produkte? Besuche unseren Online-Shop.",
 
       /* FOOTER */
-      foot_address_h: "Salon", foot_address: "Habsburgerstrasse 5<br>6003 Luzern, Schweiz",
-      foot_hours_h: "Öffnungszeiten", foot_hours: "Montag – Samstag<br>09:00 – 18:00 Uhr",
+      foot_address_h: "Studio", foot_address: "Habsburgerstrasse 5 A<br>6003 Luzern, Schweiz",
+      foot_hours_h: "Öffnungszeiten", foot_hours: "Mo – Fr: 09:00 – 19:00 Uhr<br>Sa: 09:00 – 17:00 Uhr<br>So: Geschlossen",
       foot_nav_h: "Navigation", foot_follow_h: "Folge uns", foot_shop_h: "Online-Shop",
       foot_shop_text: "Entdecke unsere Lash-Produkte.",
       foot_rights: "Alle Rechte vorbehalten.",
@@ -186,16 +186,16 @@
       cta_book_wa: "Book on WhatsApp", cta_visit_shop: "Visit shop", cta_reserve: "Book now",
       cta_explore: "Explore services",
 
-      hero_eyebrow: "Lashes · Brows · Beauty Care — Luzern",
+      hero_eyebrow: "Lashes · Brows · Beauty — Luzern",
       hero_lede: "Lashes, brows & beauty care in Luzern. Bloom and glow — in your very own way.",
 
       home_intro_eyebrow: "Welcome to Bloom & Glow",
-      home_intro_title: "Lashes, Brows & Beauty Care",
+      home_intro_title: "Lashes, Brows & Beauty",
       home_intro_text: "A heartfelt place in Luzern for natural beauty, fine details and a feel-good moment. Premium treatments, tailored to you.",
 
       svc_eyebrow: "Our services",
       svc_title: "What we offer",
-      svc_sub: "Premium lash & brow treatments, crafted with care.",
+      svc_sub: "Lash & brow treatments, crafted with care.",
       svc_lash_ext: "Lash Extensions", svc_lash_ext_d: "Classic, Hybrid & Volume",
       svc_lash_lift: "Lash Lift", svc_lash_lift_d: "Natural curl",
       svc_brow_lam: "Brow Lamination", svc_brow_lam_d: "Defined & groomed",
@@ -334,8 +334,8 @@
       res_fast_text: "The fastest way to book is directly on WhatsApp — we can't wait to see you.",
       res_shop_text: "Prefer products? Visit our online shop.",
 
-      foot_address_h: "Salon", foot_address: "Habsburgerstrasse 5<br>6003 Luzern, Switzerland",
-      foot_hours_h: "Opening hours", foot_hours: "Monday – Saturday<br>09:00 – 18:00",
+      foot_address_h: "Salon", foot_address: "Habsburgerstrasse 5 A<br>6003 Luzern, Switzerland",
+      foot_hours_h: "Opening hours", foot_hours: "Mon – Fri: 09:00 – 19:00<br>Sat: 09:00 – 17:00<br>Sun: Closed",
       foot_nav_h: "Navigation", foot_follow_h: "Follow us", foot_shop_h: "Online shop",
       foot_shop_text: "Discover our lash products.",
       foot_rights: "All rights reserved.",
@@ -350,16 +350,16 @@
       cta_book_wa: "Réserver sur WhatsApp", cta_visit_shop: "Visiter la boutique", cta_reserve: "Réserver",
       cta_explore: "Découvrir les services",
 
-      hero_eyebrow: "Lashes · Brows · Beauty Care — Lucerne",
+      hero_eyebrow: "Lashes · Brows · Beauty — Lucerne",
       hero_lede: "Cils, sourcils & soins beauté à Lucerne. Épanouis-toi et rayonne — à ta façon.",
 
       home_intro_eyebrow: "Bienvenue chez Bloom & Glow",
-      home_intro_title: "Cils, Sourcils & Soins Beauté",
+      home_intro_title: "Cils, Sourcils & Beauté",
       home_intro_text: "Un lieu de cœur à Lucerne pour une beauté naturelle, des détails soignés et un vrai moment pour soi. Des soins premium, pensés pour toi.",
 
       svc_eyebrow: "Nos services",
       svc_title: "Ce que nous proposons",
-      svc_sub: "Des soins cils & sourcils premium, réalisés avec soin.",
+      svc_sub: "Des soins cils & sourcils, réalisés avec soin.",
       svc_lash_ext: "Lash Extensions", svc_lash_ext_d: "Classic, Hybrid & Volume",
       svc_lash_lift: "Lash Lift", svc_lash_lift_d: "Courbe naturelle",
       svc_brow_lam: "Brow Lamination", svc_brow_lam_d: "Définis & soignés",
@@ -498,8 +498,8 @@
       res_fast_text: "Le plus rapide, c'est directement sur WhatsApp — on a hâte de te voir.",
       res_shop_text: "Plutôt des produits ? Visite notre boutique en ligne.",
 
-      foot_address_h: "Salon", foot_address: "Habsburgerstrasse 5<br>6003 Lucerne, Suisse",
-      foot_hours_h: "Horaires", foot_hours: "Lundi – Samedi<br>09:00 – 18:00",
+      foot_address_h: "Salon", foot_address: "Habsburgerstrasse 5 A<br>6003 Lucerne, Suisse",
+      foot_hours_h: "Horaires", foot_hours: "Lun – Ven : 09:00 – 19:00<br>Sam : 09:00 – 17:00<br>Dim : Fermé",
       foot_nav_h: "Navigation", foot_follow_h: "Suivez-nous", foot_shop_h: "Boutique en ligne",
       foot_shop_text: "Découvre nos produits cils.",
       foot_rights: "Tous droits réservés.",
