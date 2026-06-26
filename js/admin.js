@@ -31,6 +31,10 @@
       a_forgot_sent: "Falls die Adresse berechtigt ist, wurde ein Link gesendet.", a_forgot_fail: "Senden fehlgeschlagen.",
       a_confirm_ok: "Reservierung bestätigt und E-Mails gesendet.", a_confirm_mail_fail: "Reservierung bestätigt, aber E-Mail nicht gesendet.",
       a_resend: "Mail erneut senden", a_resend_ok: "E-Mail gesendet.",
+      a_msg_section: "Nachricht an Kundin", a_msg_intro: "Schreibe einer Kundin direkt per E-Mail. Nur Kundinnen mit hinterlegter E-Mail-Adresse.",
+      a_msg_to: "Kundin", a_msg_subject: "Betreff", a_msg_body: "Nachricht", a_msg_send: "Senden",
+      a_msg_pick: "Kundin auswählen…", a_msg_sending: "Wird gesendet …", a_msg_ok: "Nachricht gesendet ✓", a_msg_fail: "Senden fehlgeschlagen",
+      a_msg_history: "Gesendete Nachrichten", a_msg_none: "Noch keine gesendeten Nachrichten.",
       a_kpis_fail: "KPIs konnten nicht geladen werden.", a_load_fail: "Konnte nicht geladen werden.",
       wd: ["Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"],
     },
@@ -53,6 +57,10 @@
       a_forgot_sent: "If this address is authorized, a link has been sent.", a_forgot_fail: "Sending failed.",
       a_confirm_ok: "Booking confirmed and emails sent.", a_confirm_mail_fail: "Booking confirmed, but email not sent.",
       a_resend: "Resend email", a_resend_ok: "Email sent.",
+      a_msg_section: "Message to client", a_msg_intro: "Write to a client directly by email. Only clients with a saved email address.",
+      a_msg_to: "Client", a_msg_subject: "Subject", a_msg_body: "Message", a_msg_send: "Send",
+      a_msg_pick: "Select a client…", a_msg_sending: "Sending …", a_msg_ok: "Message sent ✓", a_msg_fail: "Sending failed",
+      a_msg_history: "Sent messages", a_msg_none: "No sent messages yet.",
       a_kpis_fail: "KPIs could not be loaded.", a_load_fail: "Could not be loaded.",
       wd: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
     },
@@ -75,6 +83,10 @@
       a_forgot_sent: "Si cette adresse est autorisée, un lien a été envoyé.", a_forgot_fail: "Échec de l'envoi.",
       a_confirm_ok: "Réservation confirmée et e-mails envoyés.", a_confirm_mail_fail: "Réservation confirmée, mais e-mail non envoyé.",
       a_resend: "Renvoyer l'e-mail", a_resend_ok: "E-mail envoyé.",
+      a_msg_section: "Message à une cliente", a_msg_intro: "Écris à une cliente directement par e-mail. Uniquement les clientes avec une adresse e-mail enregistrée.",
+      a_msg_to: "Cliente", a_msg_subject: "Objet", a_msg_body: "Message", a_msg_send: "Envoyer",
+      a_msg_pick: "Choisir une cliente…", a_msg_sending: "Envoi …", a_msg_ok: "Message envoyé ✓", a_msg_fail: "Échec de l'envoi",
+      a_msg_history: "Messages envoyés", a_msg_none: "Aucun message envoyé pour l'instant.",
       a_kpis_fail: "Les KPI n'ont pas pu être chargés.", a_load_fail: "Chargement impossible.",
       wd: ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"],
     },
@@ -159,7 +171,7 @@
   });
 
   /* ---------- LOAD ALL ---------- */
-  function loadAll() { loadKpis(); loadBookings(); loadDays(); loadBlocked(); loadTemplates(); }
+  function loadAll() { loadKpis(); loadBookings(); loadDays(); loadBlocked(); loadRecipients(); loadMsgHistory(); loadTemplates(); }
 
   /* ---------- KPIs ---------- */
   function loadKpis() {
@@ -290,6 +302,43 @@
       return '<div class="adm-tmpl"><strong>' + esc(lbl[k]) + ":</strong> " + esc(TEMPLATES[k]) + "</div>";
     }).join("");
   }
+
+  /* ---------- MESSAGERIE (email aux clientes) ---------- */
+  function loadRecipients() {
+    apiAdmin("/messages/recipients").then(function (list) {
+      var sel = $("adm-msg-to");
+      sel.innerHTML = '<option value="">' + esc(t("a_msg_pick")) + "</option>" +
+        list.map(function (r) {
+          return '<option value="' + esc(r.email) + '" data-fn="' + esc(r.firstname || "") + '">' +
+            esc(r.name || r.email) + " (" + esc(r.email) + ")</option>";
+        }).join("");
+    }).catch(function () {});
+  }
+  function loadMsgHistory() {
+    apiAdmin("/messages/history").then(function (list) {
+      var box = $("adm-msg-history");
+      if (!list.length) { box.innerHTML = '<p class="adm-msg">' + esc(t("a_msg_none")) + "</p>"; return; }
+      box.innerHTML = '<p class="adm-msg" style="font-weight:500;margin-bottom:6px;">' + esc(t("a_msg_history")) + "</p>" +
+        list.map(function (m) {
+          return '<div class="adm-tmpl"><strong>' + esc(m.customer_email || "") + "</strong> — " + esc(m.message || "") +
+            (m.status === "failed" ? ' <span style="color:#c0392b;">(failed)</span>' : "") + "</div>";
+        }).join("");
+    }).catch(function () {});
+  }
+  $("adm-msg-send").addEventListener("click", function () {
+    var sel = $("adm-msg-to");
+    var to = sel.value;
+    var opt = sel.options[sel.selectedIndex];
+    var fn = opt ? opt.getAttribute("data-fn") : "";
+    var subject = $("adm-msg-subject").value.trim();
+    var message = $("adm-msg-body").value.trim();
+    var st = $("adm-msg-status"); st.className = ""; st.textContent = "";
+    if (!to || !message) { st.className = "adm-error"; st.textContent = t("a_msg_fail"); return; }
+    st.className = "adm-msg"; st.textContent = t("a_msg_sending");
+    apiAdmin("/messages/email", { method: "POST", body: JSON.stringify({ to: to, subject: subject, message: message, firstname: fn }) })
+      .then(function () { st.className = "adm-ok"; st.textContent = t("a_msg_ok"); $("adm-msg-subject").value = ""; $("adm-msg-body").value = ""; loadMsgHistory(); })
+      .catch(function (err) { st.className = "adm-error"; st.textContent = err.message || t("a_msg_fail"); });
+  });
 
   /* ---------- INIT ---------- */
   applyStatic();
