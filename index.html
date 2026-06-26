@@ -8,19 +8,42 @@
   <meta name="theme-color" content="#ffdeee">
   <link rel="icon" type="image/png" href="assets/icons/favicon.png">
   <link rel="icon" href="assets/icons/favicon.ico" sizes="any">
-  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="assets/icons/site.webmanifest">
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Bloom & Glow Luzern — Lashes, Brows & Beauty">
   <meta property="og:description" content="Wimpern, Augenbrauen & Beauty in Luzern. Born to Bloom · Made to Glow.">
-  <meta property="og:image" content="assets/icons/og-image.jpg">
+  <meta property="og:image" content="https://bloom-glow-teal.vercel.app/assets/social/og-bloom-glow.png">
   <meta property="og:locale" content="de_CH">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://bloom-glow-teal.vercel.app/assets/social/og-bloom-glow.png">
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <meta property="og:url" content="https://bloom-glow-teal.vercel.app/">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BeautySalon",
+    "name": "Bloom & Glow",
+    "image": "https://bloom-glow-teal.vercel.app/assets/social/og-bloom-glow.png",
+    "logo": "https://bloom-glow-teal.vercel.app/assets/logo/logo-bloom-glow.png",
+    "url": "https://bloom-glow-teal.vercel.app/",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Habsburgerstrasse 5 A",
+      "addressLocality": "Luzern",
+      "postalCode": "6003",
+      "addressCountry": "CH"
+    },
+    "openingHours": ["Mo-Fr 09:00-19:00", "Sa 09:00-17:00"]
+  }
+  </script>
 </head>
 <body>
 
@@ -28,7 +51,7 @@
   <header class="site-header">
     <nav class="nav" aria-label="Hauptnavigation">
       <a href="index.html" class="brand" aria-label="Bloom & Glow — Start">
-        <img src="assets/logo/logo-bloom-glow.jpeg" alt="Bloom & Glow Luzern Logo" width="120" height="50">
+        <img src="assets/logo/logo-bloom-glow.png" alt="Bloom & Glow Luzern Logo" width="120" height="50">
       </a>
       <ul class="nav-links">
         <li><a href="index.html" data-page="index.html" data-i18n="nav_home">Start</a></li>
@@ -239,7 +262,7 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <span class="footer-logo"><img src="assets/logo/logo-bloom-glow.jpeg" alt="Bloom & Glow Luzern"></span>
+          <span class="footer-logo"><img src="assets/logo/logo-bloom-glow.png" alt="Bloom & Glow Luzern"></span>
           <div class="slogan">Born to Bloom · Made to Glow</div>
           <p class="addr">
             <strong data-i18n="foot_address_h">Studio</strong><br>
@@ -276,21 +299,3 @@
           <h4 data-i18n="foot_shop_h">Online-Shop</h4>
           <p style="font-size:.9rem;color:#b6a8af;" data-i18n="foot_shop_text">Entdecke unsere Lash-Produkte.</p>
           <a href="https://bloomandglow.sumupstore.com/" target="_blank" rel="noopener noreferrer" class="btn btn-shop footer-shop">
-            <svg class="bag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" width="16" height="16"><path d="M6 8h12l-1 12H7L6 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
-            <span data-i18n="cta_shop">Shop</span>
-          </a>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <span>© <span id="year">2026</span> Bloom &amp; Glow Luzern — <span data-i18n="foot_rights">Alle Rechte vorbehalten.</span></span>
-      </div>
-    </div>
-  </footer>
-
-  
-  
-
-  <script src="js/main.js"></script>
-  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
-</body>
-</html>

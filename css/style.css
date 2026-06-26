@@ -119,7 +119,7 @@ section { padding: 64px 0; }
   height: var(--header-h); max-width: var(--maxw); margin: 0 auto; padding: 0 22px;
 }
 .brand { display: flex; align-items: center; flex: none; }
-.brand img { height: 42px; width: auto; }
+.brand img { height: 48px; width: auto; object-fit: contain; display: block; }
 
 .nav-links { display: none; gap: 26px; margin-left: auto; }
 .nav-links a {
@@ -590,7 +590,7 @@ section { padding: 64px 0; }
   .nav-links + .nav-actions { margin-left: 22px; }
   .hide-mobile { display: inline-flex; }
   .burger { display: none; }
-  .brand img { height: 46px; }
+  .brand img { height: 56px; }
   .split { grid-template-columns: 1fr 1fr; gap: 50px; }
   .split.reverse .split-media { order: 2; }
   .gallery-preview { grid-template-columns: repeat(4,1fr); }
