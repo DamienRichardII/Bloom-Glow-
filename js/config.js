@@ -1,13 +1,12 @@
 /* =====================================================================
    BLOOM & GLOW — configuration API (centralisée)
-   Local  : http://localhost:4000/api
-   Prod   : URL du backend Railway (à remplacer ci-dessous).
+   Local : http://localhost:4000/api
+   Prod  : backend Railway
    ===================================================================== */
 (function () {
   var isLocal = ["localhost", "127.0.0.1"].indexOf(window.location.hostname) !== -1;
 
-  // ⬇️ APRÈS DÉPLOIEMENT RAILWAY : remplacer cette URL par l'URL réelle du backend.
-  var PROD_API = "https://A-REMPLACER-RAILWAY.up.railway.app/api";
+  var PROD_API = "https://bloom-glow-backend-production.up.railway.app/api";
 
   window.BG_CONFIG = {
     API_BASE_URL: isLocal ? "http://localhost:4000/api" : PROD_API,
