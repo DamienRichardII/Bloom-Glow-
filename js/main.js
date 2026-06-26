@@ -12,7 +12,8 @@
       nav_home: "Start", nav_prices: "Preise", nav_services: "Services",
       nav_info: "Infos", nav_about: "About Me", nav_formation: "Academy",
       about_wa: "Chat auf WhatsApp",
-      cta_book: "Termin buchen", cta_shop: "Shop", cta_shop_full: "Shop Bloom & Glow", cta_wa: "WhatsApp",
+      cta_book: "Termin buchen", cta_shop: "Shop", cta_shop_full: "Shop Bloom & Glow", cta_wa: "WhatsApp", cta_wa_contact: "WhatsApp Kontakt",
+      res_fresha_text: "Unsere Termine werden bequem über Fresha gebucht.", res_fresha_btn: "Termin auf Fresha buchen",
       cta_book_wa: "Auf WhatsApp buchen", cta_visit_shop: "Shop besuchen", cta_reserve: "Reservieren",
       cta_explore: "Services entdecken",
 
@@ -182,7 +183,8 @@
       nav_home: "Home", nav_prices: "Prices", nav_services: "Services",
       nav_info: "Info", nav_about: "About Me", nav_formation: "Academy",
       about_wa: "Chat on WhatsApp",
-      cta_book: "Book now", cta_shop: "Shop", cta_shop_full: "Shop Bloom & Glow", cta_wa: "WhatsApp",
+      cta_book: "Book now", cta_shop: "Shop", cta_shop_full: "Shop Bloom & Glow", cta_wa: "WhatsApp", cta_wa_contact: "Chat on WhatsApp",
+      res_fresha_text: "Our appointments are booked easily via Fresha.", res_fresha_btn: "Book on Fresha",
       cta_book_wa: "Book on WhatsApp", cta_visit_shop: "Visit shop", cta_reserve: "Book now",
       cta_explore: "Explore services",
 
@@ -346,7 +348,8 @@
       nav_home: "Accueil", nav_prices: "Prix", nav_services: "Services",
       nav_info: "Infos", nav_about: "About Me", nav_formation: "Academy",
       about_wa: "Chat sur WhatsApp",
-      cta_book: "Prendre RDV", cta_shop: "Shop", cta_shop_full: "Shop Bloom & Glow", cta_wa: "WhatsApp",
+      cta_book: "Prendre RDV", cta_shop: "Shop", cta_shop_full: "Shop Bloom & Glow", cta_wa: "WhatsApp", cta_wa_contact: "Contact WhatsApp",
+      res_fresha_text: "Nos rendez-vous se réservent facilement via Fresha.", res_fresha_btn: "Réserver sur Fresha",
       cta_book_wa: "Réserver sur WhatsApp", cta_visit_shop: "Visiter la boutique", cta_reserve: "Réserver",
       cta_explore: "Découvrir les services",
 
