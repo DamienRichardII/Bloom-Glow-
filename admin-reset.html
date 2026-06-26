@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Passwort zurücksetzen — Bloom &amp; Glow</title>
+  <link rel="icon" type="image/png" href="assets/icons/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body { background: var(--cream); }
+    .rst { max-width:380px; margin:10vh auto; background:#fff; border:1px solid var(--line); border-radius:var(--radius); padding:28px 24px; box-shadow:var(--shadow-sm); }
+    .rst h1 { font-family:var(--font-display); font-size:1.7rem; margin-bottom:6px; }
+    .rst p { color:var(--muted); font-size:.9rem; margin-bottom:16px; }
+    .rst label { display:block; font-size:.82rem; margin-bottom:6px; }
+    .rst input { width:100%; font-family:inherit; font-size:.95rem; padding:11px 13px; border:1px solid var(--line); border-radius:var(--radius-sm); margin-bottom:14px; }
+    .rst input:focus { outline:none; border-color:var(--hot-pink); }
+    .rst .msg { font-size:.9rem; margin-top:10px; }
+    .rst .err { color:#c0392b; } .rst .ok { color:#1b7a45; }
+  </style>
+</head>
+<body>
+  <div class="rst">
+    <h1>Passwort zurücksetzen</h1>
+    <p>Wähle ein neues Admin-Passwort (mindestens 6 Zeichen).</p>
+    <label for="pw1">Neues Passwort</label>
+    <input id="pw1" type="password" autocomplete="new-password">
+    <label for="pw2">Passwort bestätigen</label>
+    <input id="pw2" type="password" autocomplete="new-password">
+    <button id="submit" class="btn btn-primary btn-block">Speichern</button>
+    <p id="msg" class="msg"></p>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script>
+    (function () {
+      var API = (window.BG_CONFIG && window.BG_CONFIG.API_BASE_URL) || "http://localhost:4000/api";
+      var params = new URLSearchParams(location.search);
+      var token = params.get("token");
+      var msg = document.getElementById("msg");
+      if (!token) { msg.className = "msg err"; msg.textContent = "Ungültiger Link (Token fehlt)."; }
+
+      document.getElementById("submit").addEventListener("click", function () {
+        var p1 = document.getElementById("pw1").value, p2 = document.getElementById("pw2").value;
+        msg.className = "msg";
+        if (!token) { msg.className = "msg err"; msg.textContent = "Ungültiger Link."; return; }
+        if (p1.length < 6) { msg.className = "msg err"; msg.textContent = "Passwort zu kurz (mindestens 6 Zeichen)."; return; }
+        if (p1 !== p2) { msg.className = "msg err"; msg.textContent = "Die Passwörter stimmen nicht überein."; return; }
+        msg.textContent = "…";
+        fetch(API + "/admin/reset-password", {
+          method: "POST", headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ token: token, newPassword: p1 }),
+        }).then(function (r) { return r.json().then(function (b) { return { ok: r.ok, b: b }; }); })
+          .then(function (res) {
+            if (!res.ok) { msg.className = "msg err"; msg.textContent = (res.b && res.b.error) || "Fehler."; return; }
+            msg.className = "msg ok";
+            msg.innerHTML = 'Passwort geändert ✓ — <a href="admin.html" style="color:var(--hot-pink);">zum Login</a>';
+          })
+          .catch(function () { msg.className = "msg err"; msg.textContent = "Verbindung fehlgeschlagen."; });
+      });
+    })();
+  </script>
+</body>
+</html>

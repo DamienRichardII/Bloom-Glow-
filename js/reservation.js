@@ -82,7 +82,7 @@
     i: 0, success: false,
     catalog: [], weekly: [], blocked: [],
     category: null, service: null,
-    date: null, time: null, slots: [], loadingSlots: false,
+    date: null, time: null, slots: [], loadingSlots: false, calMonth: null,
     customer: { firstname: "", lastname: "", phone: "", email: "", note: "" },
     submitting: false, error: null,
     stripe: null, elements: null, paymentEl: null,
@@ -124,15 +124,28 @@
       if (f) { state.category = f; if (svc) { var it = f.items.find(function (i) { return i.name === svc; }); if (it) { state.service = it; state.i = 1; } } }
     }
   }
-  function selectableDates() {
-    var out = [], today = new Date(); today.setHours(0, 0, 0, 0);
-    for (var i = 0; i < 35 && out.length < 24; i++) {
-      var d = new Date(today); d.setDate(today.getDate() + i);
-      var av = state.weekly.find(function (a) { return a.weekday === d.getDay(); });
-      var s = ymd(d);
-      if (av && av.is_working_day && state.blocked.indexOf(s) === -1) out.push(s);
-    }
-    return out;
+  // ---- Calendrier (jusqu'au 31.12.2026) ----
+  var MAX_BOOKING_DATE = "2026-12-31";
+  var WD = {
+    de: ["Mo", "Di", "Mi", "Do", "Fr", "Sa", "So"],
+    en: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+    fr: ["Lun", "Mar", "Mer", "Jeu", "Ven", "Sam", "Dim"],
+  };
+  function startOfMonth(d) { return new Date(d.getFullYear(), d.getMonth(), 1); }
+  function monthKey(d) { return d.getFullYear() * 12 + d.getMonth(); }
+  function minMonth() { return startOfMonth(new Date()); }
+  function maxMonth() { return new Date(2026, 11, 1); } // décembre 2026
+  function isWorkingDay(d) {
+    var av = state.weekly.find(function (a) { return a.weekday === d.getDay(); });
+    return !!(av && av.is_working_day);
+  }
+  function isSelectableDay(dStr, d) {
+    var todayStr = ymd(new Date());
+    if (dStr < todayStr) return false;
+    if (dStr > MAX_BOOKING_DATE) return false;
+    if (!isWorkingDay(d)) return false;
+    if (state.blocked.indexOf(dStr) !== -1) return false;
+    return true;
   }
   function loadSlots(s) {
     state.loadingSlots = true; state.slots = []; render();
@@ -176,26 +189,48 @@
   }
 
   function stepDate() {
-    var dates = selectableDates();
+    if (!state.calMonth) state.calMonth = startOfMonth(new Date());
+    var cm = state.calMonth;
+    var locale = LOCALE[lang()] || "de-CH";
+    var monthLabel = new Intl.DateTimeFormat(locale, { month: "long", year: "numeric" }).format(cm);
+    var prevOff = monthKey(cm) <= monthKey(minMonth());
+    var nextOff = monthKey(cm) >= monthKey(maxMonth());
+
     var h = '<h2 class="rsv-h">' + esc(t("dt_title")) + "</h2>";
-    if (!dates.length) {
-      h += '<p class="rsv-hint">' + esc(t("no_online")) + waText() + ".</p>";
-    } else {
-      h += '<div class="rsv-dates">';
-      dates.forEach(function (s) {
-        h += '<button class="rsv-date' + (state.date === s ? " active" : "") + '" data-date="' + s + '">' +
-          '<span class="rsv-dwd">' + esc(dt(s, { weekday: "short" })) + '</span><span class="rsv-dnum">' + new Date(s + "T00:00:00").getDate() + '</span><span class="rsv-dmon">' + esc(dt(s, { month: "short" })) + "</span></button>";
-      });
-      h += "</div>";
-      if (state.date) {
-        h += '<h3 class="rsv-sub">' + esc(tpl("free_at", { date: fmtDateLong(state.date) })) + "</h3>";
-        if (state.loadingSlots) h += '<p class="rsv-hint">' + esc(t("loading")) + "</p>";
-        else if (!state.slots.length) h += '<p class="rsv-hint">' + esc(t("no_slots")) + "</p>";
-        else {
-          h += '<div class="rsv-slots">';
-          state.slots.forEach(function (x) { h += '<button class="rsv-slot' + (state.time === x ? " active" : "") + '" data-time="' + esc(x) + '">' + esc(x) + "</button>"; });
-          h += "</div>";
-        }
+    // En-tête mois + navigation
+    h += '<div class="rsv-cal-head">';
+    h += '<button class="rsv-cal-nav" data-calnav="prev"' + (prevOff ? " disabled" : "") + ' aria-label="Zurück">‹</button>';
+    h += '<span class="rsv-cal-month">' + esc(monthLabel) + "</span>";
+    h += '<button class="rsv-cal-nav" data-calnav="next"' + (nextOff ? " disabled" : "") + ' aria-label="Weiter">›</button>';
+    h += "</div>";
+    // En-têtes jours (Lu-Di)
+    h += '<div class="rsv-cal-grid rsv-cal-wd">';
+    WD[lang()].forEach(function (w) { h += "<span>" + esc(w) + "</span>"; });
+    h += "</div>";
+    // Grille des jours
+    h += '<div class="rsv-cal-grid">';
+    var first = startOfMonth(cm);
+    var offset = (first.getDay() + 6) % 7; // lundi = 0
+    for (var b = 0; b < offset; b++) h += '<span class="rsv-day empty"></span>';
+    var daysInMonth = new Date(cm.getFullYear(), cm.getMonth() + 1, 0).getDate();
+    for (var day = 1; day <= daysInMonth; day++) {
+      var d = new Date(cm.getFullYear(), cm.getMonth(), day);
+      var s = ymd(d);
+      var ok = isSelectableDay(s, d);
+      var active = state.date === s ? " active" : "";
+      h += '<button class="rsv-day' + active + '" data-date="' + s + '"' + (ok ? "" : " disabled") + ">" + day + "</button>";
+    }
+    h += "</div>";
+
+    // Créneaux du jour sélectionné
+    if (state.date) {
+      h += '<h3 class="rsv-sub">' + esc(tpl("free_at", { date: fmtDateLong(state.date) })) + "</h3>";
+      if (state.loadingSlots) h += '<p class="rsv-hint">' + esc(t("loading")) + "</p>";
+      else if (!state.slots.length) h += '<p class="rsv-hint">' + esc(t("no_slots")) + "</p>";
+      else {
+        h += '<div class="rsv-slots">';
+        state.slots.forEach(function (x) { h += '<button class="rsv-slot' + (state.time === x ? " active" : "") + '" data-time="' + esc(x) + '">' + esc(x) + "</button>"; });
+        h += "</div>";
       }
     }
     return h + navBtns(!(state.date && state.time), t("next"), true);
@@ -303,6 +338,12 @@
     var b = e.target.closest("button"); if (!b) return;
     if (b.dataset.cat) { state.category = state.catalog.find(function (c) { return c.key === b.dataset.cat; }); state.service = null; render(); return; }
     if (b.dataset.svc) { state.service = state.category.items.find(function (i) { return i.name === b.dataset.svc; }); render(); return; }
+    if (b.dataset.calnav) {
+      var delta = b.dataset.calnav === "next" ? 1 : -1;
+      var nm = new Date(state.calMonth.getFullYear(), state.calMonth.getMonth() + delta, 1);
+      if (monthKey(nm) >= monthKey(minMonth()) && monthKey(nm) <= monthKey(maxMonth())) { state.calMonth = nm; render(); }
+      return;
+    }
     if (b.dataset.date) { state.date = b.dataset.date; state.time = null; loadSlots(state.date); return; }
     if (b.dataset.time) { state.time = b.dataset.time; render(); return; }
     if (b.classList.contains("rsv-back")) { saveForm(); state.error = null; state.cardReady = false; state.i--; render(); scrollTop(); return; }

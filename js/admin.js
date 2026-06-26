@@ -27,6 +27,10 @@
       a_save: "Speichern", a_saved: "Gespeichert ✓",
       a_tpl_conf: "Bestätigung", a_tpl_rem: "Erinnerung", a_tpl_canc: "Stornierung",
       a_wrong_pw: "Falsches Passwort.", a_conn_fail: "Verbindung fehlgeschlagen: ",
+      a_forgot_link: "Passwort vergessen?", a_forgot_email: "Admin E-Mail", a_forgot_send: "Link senden",
+      a_forgot_sent: "Falls die Adresse berechtigt ist, wurde ein Link gesendet.", a_forgot_fail: "Senden fehlgeschlagen.",
+      a_confirm_ok: "Reservierung bestätigt und E-Mails gesendet.", a_confirm_mail_fail: "Reservierung bestätigt, aber E-Mail nicht gesendet.",
+      a_resend: "Mail erneut senden", a_resend_ok: "E-Mail gesendet.",
       a_kpis_fail: "KPIs konnten nicht geladen werden.", a_load_fail: "Konnte nicht geladen werden.",
       wd: ["Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"],
     },
@@ -45,6 +49,10 @@
       a_save: "Save", a_saved: "Saved ✓",
       a_tpl_conf: "Confirmation", a_tpl_rem: "Reminder", a_tpl_canc: "Cancellation",
       a_wrong_pw: "Wrong password.", a_conn_fail: "Connection failed: ",
+      a_forgot_link: "Forgot password?", a_forgot_email: "Admin email", a_forgot_send: "Send link",
+      a_forgot_sent: "If this address is authorized, a link has been sent.", a_forgot_fail: "Sending failed.",
+      a_confirm_ok: "Booking confirmed and emails sent.", a_confirm_mail_fail: "Booking confirmed, but email not sent.",
+      a_resend: "Resend email", a_resend_ok: "Email sent.",
       a_kpis_fail: "KPIs could not be loaded.", a_load_fail: "Could not be loaded.",
       wd: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
     },
@@ -63,6 +71,10 @@
       a_save: "Enregistrer", a_saved: "Enregistré ✓",
       a_tpl_conf: "Confirmation", a_tpl_rem: "Rappel", a_tpl_canc: "Annulation",
       a_wrong_pw: "Mot de passe incorrect.", a_conn_fail: "Échec de connexion : ",
+      a_forgot_link: "Mot de passe oublié ?", a_forgot_email: "E-mail admin", a_forgot_send: "Envoyer le lien",
+      a_forgot_sent: "Si cette adresse est autorisée, un lien a été envoyé.", a_forgot_fail: "Échec de l'envoi.",
+      a_confirm_ok: "Réservation confirmée et e-mails envoyés.", a_confirm_mail_fail: "Réservation confirmée, mais e-mail non envoyé.",
+      a_resend: "Renvoyer l'e-mail", a_resend_ok: "E-mail envoyé.",
       a_kpis_fail: "Les KPI n'ont pas pu être chargés.", a_load_fail: "Chargement impossible.",
       wd: ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"],
     },
@@ -136,6 +148,16 @@
   $("adm-token").addEventListener("keydown", function (e) { if (e.key === "Enter") $("adm-login-btn").click(); });
   $("adm-logout").addEventListener("click", function () { try { localStorage.removeItem(TOKEN_KEY); } catch (e) {} location.reload(); });
 
+  // Mot de passe oublie
+  $("adm-forgot-link").addEventListener("click", function (e) { e.preventDefault(); $("adm-forgot").classList.toggle("hidden"); });
+  $("adm-forgot-btn").addEventListener("click", function () {
+    var email = $("adm-forgot-email").value.trim();
+    var msg = $("adm-forgot-msg"); msg.className = "adm-msg"; msg.textContent = "…";
+    fetch(API + "/admin/forgot-password", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ email: email }) })
+      .then(function () { msg.className = "adm-ok"; msg.textContent = t("a_forgot_sent"); })
+      .catch(function () { msg.className = "adm-error"; msg.textContent = t("a_forgot_fail"); });
+  });
+
   /* ---------- LOAD ALL ---------- */
   function loadAll() { loadKpis(); loadBookings(); loadDays(); loadBlocked(); loadTemplates(); }
 
@@ -176,14 +198,29 @@
     h += '<a class="btn btn-wa" href="' + waLink(b, "confirmation") + '" target="_blank" rel="noopener">' + esc(t("a_wa_conf")) + "</a>";
     h += '<a class="btn btn-wa" href="' + waLink(b, "reminder") + '" target="_blank" rel="noopener">' + esc(t("a_wa_rem")) + "</a>";
     h += '<a class="btn btn-outline" href="' + waLink(b, "cancellation") + '" target="_blank" rel="noopener">' + esc(t("a_wa_canc")) + "</a>";
+    h += '<button class="btn btn-outline" data-resend="1">' + esc(t("a_resend")) + "</button>";
     h += "</div></div>";
     return h;
   }
   $("adm-bookings").addEventListener("click", function (e) {
+    // Renvoyer l'email de confirmation
+    var resend = e.target.closest("button[data-resend]");
+    if (resend) {
+      var rid = resend.closest(".adm-booking").dataset.id; resend.disabled = true;
+      apiAdmin("/bookings/" + rid + "/resend-confirmation", { method: "POST" })
+        .then(function (r) { alert(r.email && r.email.error ? r.email.error : t("a_resend_ok")); resend.disabled = false; })
+        .catch(function (err) { alert(err.message); resend.disabled = false; });
+      return;
+    }
     var btn = e.target.closest("button[data-act]"); if (!btn) return;
     var id = btn.closest(".adm-booking").dataset.id; btn.disabled = true;
     apiAdmin("/bookings/" + id + "/status", { method: "PATCH", body: JSON.stringify({ status: btn.dataset.act }) })
-      .then(function () { loadBookings(); loadKpis(); })
+      .then(function (r) {
+        if (btn.dataset.act === "confirmed" && r && r.email) {
+          alert(r.email.client || r.email.admin ? t("a_confirm_ok") : t("a_confirm_mail_fail") + (r.email.error ? " (" + r.email.error + ")" : ""));
+        }
+        loadBookings(); loadKpis();
+      })
       .catch(function (err) { alert(err.message); btn.disabled = false; });
   });
   $("adm-reload-bookings").addEventListener("click", loadBookings);
