@@ -22,7 +22,7 @@
     de: {
       s_service: "Service", s_datetime: "Datum & Zeit", s_infos: "Deine Daten", s_card: "Karte", s_confirm: "Bestätigung",
       choose: "Wähle deine Behandlung", pick_cat: "Wähle zuerst eine Kategorie.", next: "Weiter", back: "Zurück",
-      dt_title: "Datum & Uhrzeit", no_online: "Momentan sind keine Termine online verfügbar. Schreib uns auf",
+      dt_title: "Datum & Uhrzeit", no_online: "Momentan sind keine Termine online verfügbar. Bitte versuche es später erneut",
       free_at: "Freie Zeiten am {date}", loading: "Lädt …", no_slots: "Keine freien Zeiten an diesem Tag. Bitte ein anderes Datum wählen.",
       vorname: "Vorname", nachname: "Nachname", phone: "Telefon", email: "E-Mail", note: "Bemerkung / Wunschlook",
       err_req: "Bitte Vorname, Nachname und Telefon ausfüllen.", err_email: "Bitte eine gültige E-Mail eingeben.",
@@ -32,14 +32,14 @@
       r_treat: "Behandlung", r_price: "Preis", r_date: "Datum", r_time: "Uhrzeit", r_name: "Name", r_phone: "Telefon", r_email: "E-Mail", r_note: "Bemerkung", r_card: "Karte", card_saved: "hinterlegt ✓",
       submit: "Termin bestätigen", sending: "Wird gesendet …", oclock: "Uhr",
       thanks: "Danke, {name}!", received: "Deine Terminanfrage für {service} am {date} um {time} Uhr ist eingegangen.",
-      soon: "Du erhältst in Kürze eine Bestätigung. Bei Fragen schreib uns auf", to_home: "Zur Startseite",
-      send_fail: "Senden fehlgeschlagen.", or_wa: " — oder buche direkt auf WhatsApp.",
-      unreachable: "Die Online-Buchung ist gerade nicht erreichbar.", try_later: "Bitte versuche es später erneut oder schreib uns direkt auf", book_wa: "Auf WhatsApp buchen",
+      soon: "Du erhältst in Kürze eine Bestätigung", to_home: "Zur Startseite",
+      send_fail: "Senden fehlgeschlagen.", or_wa: " — bitte versuche es später erneut.",
+      unreachable: "Die Online-Buchung ist gerade nicht erreichbar.", try_later: "Bitte versuche es später erneut.", book_wa: "",
     },
     en: {
       s_service: "Service", s_datetime: "Date & Time", s_infos: "Your details", s_card: "Card", s_confirm: "Confirmation",
       choose: "Choose your treatment", pick_cat: "Please select a category first.", next: "Next", back: "Back",
-      dt_title: "Date & Time", no_online: "No appointments are available online right now. Message us on",
+      dt_title: "Date & Time", no_online: "No appointments are available online right now. Please try again later",
       free_at: "Available times on {date}", loading: "Loading …", no_slots: "No free times on this day. Please choose another date.",
       vorname: "First name", nachname: "Last name", phone: "Phone", email: "Email", note: "Note / desired look",
       err_req: "Please fill in first name, last name and phone.", err_email: "Please enter a valid email.",
@@ -49,14 +49,14 @@
       r_treat: "Treatment", r_price: "Price", r_date: "Date", r_time: "Time", r_name: "Name", r_phone: "Phone", r_email: "Email", r_note: "Note", r_card: "Card", card_saved: "saved ✓",
       submit: "Confirm appointment", sending: "Sending …", oclock: "",
       thanks: "Thank you, {name}!", received: "Your appointment request for {service} on {date} at {time} has been received.",
-      soon: "You will receive a confirmation shortly. Any questions? Message us on", to_home: "Back to home",
-      send_fail: "Sending failed.", or_wa: " — or book directly on WhatsApp.",
-      unreachable: "Online booking is currently unavailable.", try_later: "Please try again later or message us directly on", book_wa: "Book on WhatsApp",
+      soon: "You will receive a confirmation shortly", to_home: "Back to home",
+      send_fail: "Sending failed.", or_wa: " — please try again later.",
+      unreachable: "Online booking is currently unavailable.", try_later: "Please try again later.", book_wa: "",
     },
     fr: {
       s_service: "Soin", s_datetime: "Date & Heure", s_infos: "Tes coordonnées", s_card: "Carte", s_confirm: "Confirmation",
       choose: "Choisis ton soin", pick_cat: "Choisis d'abord une catégorie.", next: "Suivant", back: "Retour",
-      dt_title: "Date & Heure", no_online: "Aucun créneau n'est disponible en ligne pour le moment. Écris-nous sur",
+      dt_title: "Date & Heure", no_online: "Aucun créneau n'est disponible en ligne pour le moment. Réessaie plus tard",
       free_at: "Créneaux libres le {date}", loading: "Chargement …", no_slots: "Aucun créneau libre ce jour-là. Choisis une autre date.",
       vorname: "Prénom", nachname: "Nom", phone: "Téléphone", email: "E-mail", note: "Remarque / look souhaité",
       err_req: "Merci de remplir prénom, nom et téléphone.", err_email: "Merci d'entrer un e-mail valide.",
@@ -66,9 +66,9 @@
       r_treat: "Soin", r_price: "Prix", r_date: "Date", r_time: "Heure", r_name: "Nom", r_phone: "Téléphone", r_email: "E-mail", r_note: "Remarque", r_card: "Carte", card_saved: "enregistrée ✓",
       submit: "Confirmer le rendez-vous", sending: "Envoi …", oclock: "",
       thanks: "Merci, {name} !", received: "Ta demande de rendez-vous pour {service} le {date} à {time} a bien été reçue.",
-      soon: "Tu recevras une confirmation sous peu. Une question ? Écris-nous sur", to_home: "Retour à l'accueil",
-      send_fail: "Échec de l'envoi.", or_wa: " — ou réserve directement sur WhatsApp.",
-      unreachable: "La réservation en ligne est momentanément indisponible.", try_later: "Réessaie plus tard ou écris-nous directement sur", book_wa: "Réserver sur WhatsApp",
+      soon: "Tu recevras une confirmation sous peu", to_home: "Retour à l'accueil",
+      send_fail: "Échec de l'envoi.", or_wa: " — réessaie plus tard.",
+      unreachable: "La réservation en ligne est momentanément indisponible.", try_later: "Réessaie plus tard.", book_wa: "",
     },
   };
   function lang() { try { var l = localStorage.getItem("bg_lang"); return I18N[l] ? l : "de"; } catch (e) { return "de"; } }
@@ -106,7 +106,7 @@
     });
   }
   function scrollTop() { window.scrollTo({ top: root.offsetTop - 80, behavior: "smooth" }); }
-  function waText() { return ' <a href="' + WA + '" target="_blank" rel="noopener noreferrer">WhatsApp</a>'; }
+  function waText() { return ""; }
 
   /* ---------- data ---------- */
   function loadInitial() {
@@ -347,7 +347,6 @@
   /* ---------- init ---------- */
   loadInitial().then(render).catch(function () {
     root.innerHTML = '<div class="rsv-panel"><p class="rsv-error">' + esc(t("unreachable")) + "</p>" +
-      '<p class="rsv-hint">' + esc(t("try_later")) + waText() + ".</p>" +
-      '<a href="' + WA + '" target="_blank" rel="noopener noreferrer" class="btn btn-wa">' + esc(t("book_wa")) + "</a></div>";
+      '<p class="rsv-hint">' + esc(t("try_later")) + "</p></div>";
   });
 })();

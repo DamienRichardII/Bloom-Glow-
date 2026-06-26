@@ -83,7 +83,7 @@
       li_inkl: "inkl. Färben, Formen",
 
       book_cta_title: "Bereit zum Strahlen?",
-      book_cta_text: "Buche deinen Termin online oder schreib uns direkt auf WhatsApp.",
+      book_cta_text: "Buche deinen Termin ganz einfach online.",
 
       shop_title: "Bloom & Glow Shop",
       shop_text: "Entdecke unsere Lash-Produkte im offiziellen Bloom & Glow Online-Shop.",
@@ -93,7 +93,7 @@
       prices_title: "Preise & Behandlungen",
       prices_sub: "Wimpernverlängerung, Lifting & Augenbrauen – transparente Preise.",
       block_extensions: "Wimpernverlängerung", block_lifting: "Lifting & andere Services",
-      cat_augenbrauen: "Augenbrauen", cat_wimpern_lift: "Wimpern", cat_kombi: "Kombi-Angebote",
+      cat_augenbrauen: "Augenbrauen", cat_wimpern_lift: "Wimpern", cat_kombi: "Kombi-Angebot",
       price_extensions_h: "Extensions", price_extras_h: "Extras",
       col_service: "Service", col_neuset: "Neuset",
       col_refill3: "Auffüllen bis 3 Wochen", col_refill4: "Auffüllen bis 4 Wochen",
@@ -117,7 +117,7 @@
       /* SERVICES */
       services_eyebrow: "Galerie & Services",
       services_title: "Entdecke unsere Behandlungen",
-      services_sub: "Wähle deinen Look – buche bequem auf WhatsApp.",
+      services_sub: "Wähle deinen Look – buche bequem online.",
       filter_all: "Alle", filter_lashes: "Lashes", filter_brows: "Brows",
       filter_products: "Products", filter_care: "Care",
       s_lashext_d: "Classic, Hybrid oder Volume – für jeden Look die passende Technik.",
@@ -134,7 +134,7 @@
       info_explain_title: "Wimpern, kurz erklärt",
       info_explain_text: "Wimpernextensions werden einzeln auf deine Naturwimpern aufgetragen und verleihen dir einen wachen, definierten Blick – ganz ohne Mascara. Je nach Wunsch natürlich oder voluminös.",
       step1_t: "Wähle deinen Style", step1_d: "Classic, Hybrid oder Volume.",
-      step2_t: "Termin buchen", step2_d: "Online oder via WhatsApp.",
+      step2_t: "Termin buchen", step2_d: "Online in wenigen Klicks.",
       step3_t: "Get your glow", step3_d: "Entspann dich & strahle.",
       step4_t: "Aftercare", step4_d: "Pflege für lange Freude.",
       prep_lash_t: "Vorbereitung Wimpern",
@@ -152,7 +152,7 @@
       after_4: "Keine Mascara oder Wimpernzange verwenden.",
       after_5: "Täglich sanft mit sauberem Bürstchen bürsten.",
       after_6: "Am besten nicht auf dem Gesicht schlafen.",
-      info_wa_text: "Noch Fragen? Schreib uns jederzeit auf WhatsApp.",
+      info_wa_text: "Noch Fragen? Wir sind gerne für dich da.",
       info_shop_text: "Aftercare-Produkte findest du im Bloom & Glow Shop.",
 
       /* FORMATION */
@@ -166,7 +166,7 @@
       res_title: "Buche deinen Glow-Termin",
       res_lede: "Wähle deine Behandlung und buche in wenigen Sekunden.",
       res_choose_title: "Wähle deine Behandlung",
-      res_fast_text: "Am schnellsten geht's direkt über WhatsApp – wir freuen uns auf dich.",
+      res_fast_text: "Buche deinen Termin in wenigen Schritten online.",
       res_shop_text: "Lieber Produkte? Besuche unseren Online-Shop.",
 
       /* FOOTER */
@@ -253,7 +253,7 @@
       li_inkl: "incl. tint, shaping",
 
       book_cta_title: "Ready to glow?",
-      book_cta_text: "Book your appointment online or message us directly on WhatsApp.",
+      book_cta_text: "Book your appointment easily online.",
 
       shop_title: "Bloom & Glow Shop",
       shop_text: "Discover our lash products in the official Bloom & Glow online shop.",
@@ -285,7 +285,7 @@
 
       services_eyebrow: "Gallery & Services",
       services_title: "Explore our treatments",
-      services_sub: "Choose your look — book easily on WhatsApp.",
+      services_sub: "Choose your look — book easily online.",
       filter_all: "All", filter_lashes: "Lashes", filter_brows: "Brows",
       filter_products: "Products", filter_care: "Care",
       s_lashext_d: "Classic, Hybrid or Volume — the right technique for every look.",
@@ -301,7 +301,7 @@
       info_explain_title: "Lashes, briefly explained",
       info_explain_text: "Lash extensions are applied individually to your natural lashes, giving you an awake, defined look — without mascara. Natural or voluminous, just as you wish.",
       step1_t: "Choose your style", step1_d: "Classic, Hybrid or Volume.",
-      step2_t: "Book your appointment", step2_d: "Online or via WhatsApp.",
+      step2_t: "Book your appointment", step2_d: "Online in a few clicks.",
       step3_t: "Get your glow", step3_d: "Relax & shine.",
       step4_t: "Aftercare", step4_d: "Care for lasting results.",
       prep_lash_t: "Lash preparation",
@@ -319,7 +319,7 @@
       after_4: "No mascara or lash curler.",
       after_5: "Brush gently every day with a clean brush.",
       after_6: "Best not to sleep on your face.",
-      info_wa_text: "Still have questions? Message us anytime on WhatsApp.",
+      info_wa_text: "Still have questions? We're happy to help.",
       info_shop_text: "Find aftercare products in the Bloom & Glow shop.",
 
       formation_badge: "Coming Soon",
@@ -331,7 +331,7 @@
       res_title: "Book your glow appointment",
       res_lede: "Choose your treatment and book in just a few seconds.",
       res_choose_title: "Choose your treatment",
-      res_fast_text: "The fastest way to book is directly on WhatsApp — we can't wait to see you.",
+      res_fast_text: "Book your appointment online in a few steps.",
       res_shop_text: "Prefer products? Visit our online shop.",
 
       foot_address_h: "Salon", foot_address: "Habsburgerstrasse 5 A<br>6003 Luzern, Switzerland",
@@ -417,7 +417,7 @@
       li_inkl: "teinture & forme incl.",
 
       book_cta_title: "Prête à rayonner ?",
-      book_cta_text: "Réserve ton rendez-vous en ligne ou écris-nous directement sur WhatsApp.",
+      book_cta_text: "Réserve ton rendez-vous en ligne en quelques clics.",
 
       shop_title: "Boutique Bloom & Glow",
       shop_text: "Découvre nos produits cils dans la boutique en ligne officielle Bloom & Glow.",
@@ -449,7 +449,7 @@
 
       services_eyebrow: "Galerie & Services",
       services_title: "Découvre nos soins",
-      services_sub: "Choisis ton look — réserve facilement sur WhatsApp.",
+      services_sub: "Choisis ton look — réserve facilement en ligne.",
       filter_all: "Tous", filter_lashes: "Lashes", filter_brows: "Brows",
       filter_products: "Products", filter_care: "Care",
       s_lashext_d: "Classic, Hybrid ou Volume — la bonne technique pour chaque regard.",
@@ -465,7 +465,7 @@
       info_explain_title: "Les cils, en bref",
       info_explain_text: "Les extensions de cils sont posées une à une sur tes cils naturels, pour un regard éveillé et défini — sans mascara. Naturel ou volumineux, selon ton envie.",
       step1_t: "Choisis ton style", step1_d: "Classic, Hybrid ou Volume.",
-      step2_t: "Réserve ton RDV", step2_d: "En ligne ou via WhatsApp.",
+      step2_t: "Réserve ton RDV", step2_d: "En ligne en quelques clics.",
       step3_t: "Get your glow", step3_d: "Détends-toi & rayonne.",
       step4_t: "Aftercare", step4_d: "Un entretien pour durer.",
       prep_lash_t: "Préparation cils",
@@ -483,7 +483,7 @@
       after_4: "Pas de mascara ni de recourbe-cils.",
       after_5: "Brosse doucement chaque jour avec une brosse propre.",
       after_6: "Évite de dormir sur le visage.",
-      info_wa_text: "Encore des questions ? Écris-nous sur WhatsApp.",
+      info_wa_text: "Encore des questions ? Nous sommes là pour toi.",
       info_shop_text: "Retrouve les produits d'entretien dans la boutique Bloom & Glow.",
 
       formation_badge: "Bientôt",
@@ -495,7 +495,7 @@
       res_title: "Réserve ton rendez-vous glow",
       res_lede: "Choisis ton soin et réserve en quelques secondes.",
       res_choose_title: "Choisis ton soin",
-      res_fast_text: "Le plus rapide, c'est directement sur WhatsApp — on a hâte de te voir.",
+      res_fast_text: "Réserve ton rendez-vous en ligne en quelques étapes.",
       res_shop_text: "Plutôt des produits ? Visite notre boutique en ligne.",
 
       foot_address_h: "Salon", foot_address: "Habsburgerstrasse 5 A<br>6003 Lucerne, Suisse",
